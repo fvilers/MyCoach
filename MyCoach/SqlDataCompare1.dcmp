@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataComparison>
+  <Version>10</Version>
+  <ConnectionProperties1>
+    <ConnectionString>Data Source=(local);Initial Catalog=MyCoach;Integrated Security=True;Persist Security Info=False;Pooling=False</ConnectionString>
+    <FullDisplayName>(local).MyCoach (LAP03\Fabian)</FullDisplayName>
+  </ConnectionProperties1>
+  <ConnectionProperties2>
+    <ConnectionString>Data Source=a1weo4fwzo.database.windows.net,1433;Initial Catalog=MyCoach;Integrated Security=False;Persist Security Info=True;User ID=my-coach;Pooling=False</ConnectionString>
+    <FullDisplayName>a1weo4fwzo.database.windows.net,1433.MyCoach (my-coach)</FullDisplayName>
+  </ConnectionProperties2>
+  <SessionSettings>Default</SessionSettings>
+</DataComparison>

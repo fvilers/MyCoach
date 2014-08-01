@@ -191,13 +191,15 @@
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Api\KeywordController.cs" />
+    <Compile Include="Controllers\Api\CoachController.cs" />
+    <Compile Include="Controllers\Api\ExpertiseDomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\CoachProfileDtoMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
-    <Compile Include="Mappers\KeywordDtoMapper.cs" />
+    <Compile Include="Mappers\ExpertiseDomainDtoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
   </ItemGroup>

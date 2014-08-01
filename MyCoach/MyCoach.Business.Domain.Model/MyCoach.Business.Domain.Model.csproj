@@ -46,13 +46,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="CoachProfile.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
-    <Compile Include="Keyword.cs" />
+    <Compile Include="ExpertiseDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyCoach.Shared.Enums\MyCoach.Shared.Enums.csproj">
+      <Project>{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}</Project>
+      <Name>MyCoach.Shared.Enums</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

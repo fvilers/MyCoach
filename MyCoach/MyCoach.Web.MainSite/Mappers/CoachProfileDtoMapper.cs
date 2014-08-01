@@ -4,15 +4,14 @@ using System;
 
 namespace MyCoach.Web.MainSite.Mappers
 {
-    public class KeywordDtoMapper : IMapper<Keyword, KeywordDto>
+    public class CoachProfileDtoMapper : IMapper<CoachProfile, CoachProfileDto>
     {
-        public KeywordDto Map(Keyword source)
+        public CoachProfileDto Map(CoachProfile source)
         {
             if (source == null) throw new ArgumentNullException("source");
 
-            var result = new KeywordDto
+            var result = new CoachProfileDto
             {
-                Name = source.Name
             };
 
             return result;
