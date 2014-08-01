@@ -15,7 +15,7 @@ namespace MyCoach.Web.MainSite.Controllers
         [Route("search")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Search()
+        public ActionResult Search(string[] keywords)
         {
             throw new NotImplementedException();
         }
