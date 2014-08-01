@@ -1,4 +1,6 @@
 using MyCoach.Business.Domain.Model;
+using MyCoach.Shared.Collections.Extensions;
+using MyCoach.Shared.Enums;
 
 namespace MyCoach.Data.EntityFramework.Migrations
 {
@@ -26,12 +28,15 @@ namespace MyCoach.Data.EntityFramework.Migrations
             //    );
             //
 
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Développement", Slug = "developpement" });
+            var dev = new ExpertiseDomain { Name = "Développement", Slug = "developpement" };
+            var csharp = new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" };
+
+            context.Keywords.AddOrUpdate(x => x.Name, dev);
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "JavaScript", Slug = "javascript" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Agile", Slug = "agile" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Scrum", Slug = "scrum" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = ".NET", Slug = "dot-net" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" });
+            context.Keywords.AddOrUpdate(x => x.Name, csharp);
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "SQL Server", Slug = "sql-server" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Base de données", Slug = "base-de-donnees" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Web", Slug = "web" });
@@ -40,6 +45,19 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Hardware", Slug = "hardware" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Informatique", Slug = "informatique" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "jQuery", Slug = "jquery" });
+            context.SaveChanges();
+
+            var fvilers = new CoachProfile
+            {
+                FirstName = "Fabian",
+                LastName = "Vilers",
+                Biography = "Je suis le meilleur",
+                Price = 50,
+                Currency = Currency.Euro
+            };
+            fvilers.ExpertiseDomains.AddRange(dev, csharp);
+
+            context.CoachProfiles.AddOrUpdate(x => new { x.FirstName, x.LastName }, fvilers);
         }
     }
 }

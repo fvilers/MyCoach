@@ -58,6 +58,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyCoachContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeConfigurations\CoachProfileTypeConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyCoach.Business.Domain.Model\MyCoach.Business.Domain.Model.csproj">
@@ -67,6 +68,14 @@
     <ProjectReference Include="..\MyCoach.Data\MyCoach.Data.csproj">
       <Project>{19e81096-cef4-49e7-a7b8-db4b8c93861a}</Project>
       <Name>MyCoach.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCoach.Shared.Enums\MyCoach.Shared.Enums.csproj">
+      <Project>{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}</Project>
+      <Name>MyCoach.Shared.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCoach.Shared\MyCoach.Shared.csproj">
+      <Project>{819c1faf-506c-453f-a6c4-c5221b010036}</Project>
+      <Name>MyCoach.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
