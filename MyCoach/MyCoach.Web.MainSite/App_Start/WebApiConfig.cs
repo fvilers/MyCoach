@@ -8,6 +8,7 @@ namespace MyCoach.Web.MainSite
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             config.Filters.Add(new ElmahHandleErrorApiAttribute());
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.MapHttpAttributeRoutes();

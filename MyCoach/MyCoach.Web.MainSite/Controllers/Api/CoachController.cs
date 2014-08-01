@@ -4,9 +4,11 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace MyCoach.Web.MainSite.Controllers.Api
 {
+    [EnableCors(origins: "http://localhost:8000", headers: "*", methods: "*")]
     [RoutePrefix("api/coaches")]
     public class CoachController : ApiController
     {
