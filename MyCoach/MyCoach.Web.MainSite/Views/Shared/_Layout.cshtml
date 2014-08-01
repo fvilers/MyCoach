@@ -3,9 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - MyCoach</title>
+    <title>@ViewBag.Title &middot; Mon Docteur en ligne</title>
+    @Styles.Render("~/Content/css")
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    @RenderBody()
+    @Html.Partial("_NavigationPartial")
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
