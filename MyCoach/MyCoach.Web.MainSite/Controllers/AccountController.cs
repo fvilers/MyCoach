@@ -11,6 +11,8 @@ namespace MyCoach.Web.MainSite.Controllers
 {
     public class AccountController : Controller
     {
+        
+        
         //
         // GET: /Account/Register
         [AllowAnonymous]
