@@ -12,7 +12,9 @@ namespace MyCoach.Web.MainSite.Mappers
 
             var result = new KeywordDto
             {
-                Name = source.Name
+                Id = source.Id,
+                Name = source.Name,
+                Slug = source.Slug
             };
 
             return result;
