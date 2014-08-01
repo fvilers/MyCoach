@@ -1,6 +1,9 @@
+using Microsoft.AspNet.Identity;
 using Microsoft.Practices.Unity;
+using MyCoach.Business.Domain.Model;
 using MyCoach.Data.EntityFramework;
 using System;
+using MyCoach.Data.Identity.Managers;
 
 namespace MyCoach.Web.MainSite
 {
@@ -37,6 +40,10 @@ namespace MyCoach.Web.MainSite
 
             // TODO: Register your types here
             container.RegisterType<IMyCoachContext, MyCoachContext>();
+
+            // Identity
+            container.RegisterType<IUserStore<ApplicationUser, int>, ApplicationUserStore>();
+            container.RegisterType<UserManager<ApplicationUser, int>, ApplicationUserManager>();
         }
     }
 }

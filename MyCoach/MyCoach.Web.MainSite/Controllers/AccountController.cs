@@ -5,14 +5,20 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using MyCoach.Data.Identity.Managers;
 using MyCoach.Web.MainSite.ViewModels;
 
 namespace MyCoach.Web.MainSite.Controllers
 {
     public class AccountController : Controller
     {
-        
-        
+        private ApplicationUserManager _userManager;
+
+        public AccountController(ApplicationUserManager userManager)
+        {
+            _userManager = userManager;
+        }
+
         //
         // GET: /Account/Register
         [AllowAnonymous]
