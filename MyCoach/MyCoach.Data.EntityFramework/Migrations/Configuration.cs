@@ -26,20 +26,20 @@ namespace MyCoach.Data.EntityFramework.Migrations
             //    );
             //
 
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Développement", Slug = "developpement" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "JavaScript", Slug = "javascript" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Agile", Slug = "agile" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Scrum", Slug = "scrum" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = ".NET", Slug = "dot-net" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "CSharp", Slug = "c-sharp" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "SQL Server", Slug = "sql-server" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Base de données", Slug = "base-de-donnees" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Web", Slug = "web" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Internet", Slug = "internet" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Design", Slug = "design" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Hardware", Slug = "hardware" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "Informatique", Slug = "informatique" });
-            context.Keywords.AddOrUpdate(x => x.Name, new Keyword { Name = "jQuery", Slug = "jquery" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Développement", Slug = "developpement" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "JavaScript", Slug = "javascript" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Agile", Slug = "agile" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Scrum", Slug = "scrum" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = ".NET", Slug = "dot-net" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "SQL Server", Slug = "sql-server" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Base de données", Slug = "base-de-donnees" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Web", Slug = "web" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Internet", Slug = "internet" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Design", Slug = "design" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Hardware", Slug = "hardware" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Informatique", Slug = "informatique" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "jQuery", Slug = "jquery" });
         }
     }
 }

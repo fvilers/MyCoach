@@ -6,23 +6,22 @@ using System.Web.Http;
 
 namespace MyCoach.Web.MainSite.Controllers.Api
 {
-    [RoutePrefix("api/keywords")]
-    public class KeywordController : ApiController
+    [RoutePrefix("api/coaches")]
+    public class CoachController : ApiController
     {
         private readonly IMyCoachContext _coachContext;
 
-        public KeywordController(IMyCoachContext coachContext)
+        public CoachController(IMyCoachContext coachContext)
         {
             if (coachContext == null) throw new ArgumentNullException("coachContext");
             _coachContext = coachContext;
         }
 
-        [HttpGet]
         [Route("")]
         public IHttpActionResult Get()
         {
-            var keywords = _coachContext.Keywords.ToArray();
-            var mapper = new KeywordDtoMapper();
+            var keywords = _coachContext.CoachProfiles.ToArray();
+            var mapper = new CoachProfileDtoMapper();
             var dtos = keywords.Select(mapper.Map).ToArray();
 
             return Ok(dtos);

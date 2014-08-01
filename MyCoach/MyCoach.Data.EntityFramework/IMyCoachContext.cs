@@ -6,6 +6,7 @@ namespace MyCoach.Data.EntityFramework
     public interface IMyCoachContext : IUnitOfWork, IAsyncUnitOfWork
     {
         IDbSet<ApplicationUser> ApplicationUsers { get; }
-        IDbSet<Keyword> Keywords { get; }
+        IDbSet<CoachProfile> CoachProfiles { get; }
+        IDbSet<ExpertiseDomain> Keywords { get; }
     }
 }

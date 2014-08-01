@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoach.Data.EntityFramewor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoach.Services.Dtos", "MyCoach.Services.Dtos\MyCoach.Services.Dtos.csproj", "{C2F73CB1-87B6-4EE8-A8FF-1214C6DA941D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoach.Shared.Enums", "MyCoach.Shared.Enums\MyCoach.Shared.Enums.csproj", "{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{C2F73CB1-87B6-4EE8-A8FF-1214C6DA941D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2F73CB1-87B6-4EE8-A8FF-1214C6DA941D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2F73CB1-87B6-4EE8-A8FF-1214C6DA941D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
