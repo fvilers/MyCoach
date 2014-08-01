@@ -1,7 +1,6 @@
-﻿
-namespace MyCoach.Services.Dtos
+﻿namespace MyCoach.Services.Dtos
 {
-    public class KeywordDto
+    public class ExpertiseDomainDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

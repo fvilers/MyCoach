@@ -220,6 +220,10 @@
       <Project>{C2F73CB1-87B6-4EE8-A8FF-1214C6DA941D}</Project>
       <Name>MyCoach.Services.Dtos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyCoach.Shared.Enums\MyCoach.Shared.Enums.csproj">
+      <Project>{8D2094B6-6ED5-4B92-9AA2-80D10BEC0F6E}</Project>
+      <Name>MyCoach.Shared.Enums</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

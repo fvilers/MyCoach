@@ -4,13 +4,13 @@ using System;
 
 namespace MyCoach.Web.MainSite.Mappers
 {
-    public class ExpertiseDomainDtoMapper : IMapper<ExpertiseDomain, KeywordDto>
+    public class ExpertiseDomainDtoMapper : IMapper<ExpertiseDomain, ExpertiseDomainDto>
     {
-        public KeywordDto Map(ExpertiseDomain source)
+        public ExpertiseDomainDto Map(ExpertiseDomain source)
         {
             if (source == null) throw new ArgumentNullException("source");
 
-            var result = new KeywordDto
+            var result = new ExpertiseDomainDto
             {
                 Id = source.Id,
                 Name = source.Name,
