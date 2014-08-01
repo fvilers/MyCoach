@@ -2,7 +2,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Bienvenue sur MyCoach</h2>
+<h2>Bienvenue sur MyCoach @User.Identity.Name</h2>
 
 @using (Html.BeginForm("Search", "Home"))
 {
