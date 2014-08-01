@@ -1,17 +1,11 @@
 ﻿using MyCoach.Business.Domain.Model;
-using System;
 using System.Data.Entity;
-using System.Threading.Tasks;
 
 namespace MyCoach.Data.EntityFramework
 {
-    public class MyCoachContext : DbContext, IMyCoachContext
+    public class MyCoachContext : ContextBase, IMyCoachContext
     {
-
         public IDbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public new Task<int> SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
+        public IDbSet<Keyword> Keywords { get; set; }
     }
 }
