@@ -19,6 +19,8 @@ namespace MyCoach.Web.MainSite.Mappers
                 Price = source.Price,
                 Currency = source.Currency,
                 Biography = source.Biography,
+                Summary = source.Summary,
+                SkypeId = source.SkypeId,
                 ExpertiseDomains = source.ExpertiseDomains.Select(new ExpertiseDomainDtoMapper().Map).ToArray()
             };
 

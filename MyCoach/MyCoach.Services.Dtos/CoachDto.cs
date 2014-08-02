@@ -11,6 +11,8 @@ namespace MyCoach.Services.Dtos
         public decimal Price { get; set; }
         public Currency Currency { get; set; }
         public string Biography { get; set; }
+        public string Summary { get; set; }
+        public string SkypeId { get; set; }
         public IEnumerable<ExpertiseDomainDto> ExpertiseDomains { get; set; }
     }
 }
