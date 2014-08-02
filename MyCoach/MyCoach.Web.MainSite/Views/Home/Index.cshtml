@@ -58,7 +58,7 @@
             $.getJSON('http://localhost:29071/api/expertise-domains').done(function (data) {
                 $('#search-input').typeahead({
                     hint: true,
-                    hightlight: true,
+                    hightlight: false,
                     minLength: 2
                 }, {
                     displayKey: 'name',
@@ -71,6 +71,7 @@
                     $li.text(selectedItem.name);
                     $('#search-keywords').append($li);
                     $(this).typeahead('val', '');
+                    $(this).attr('placeholder', '');
                 });
             });
         });
