@@ -1,6 +1,6 @@
 // IMPORT
 
-@import 'fonts','normalize', 'animate';
+@import 'fonts.scss','normalize.scss', 'animate.scss';
 
 // Variables
 
@@ -178,7 +178,7 @@ html {
           &.bio {
             line-height: 2em;
           }
-          &[role='nav'] {
+          &[role='navigation'] {
             margin-top: 10px;
             @include border-radius(4px);
 
@@ -221,6 +221,15 @@ html {
 // POP HOVER
 
 #pophover {
+  #close {
+    position: absolute;
+    opacity: .5;
+    top: -20px;
+    right: -20px;
+    &:hover {
+      opacity: 1;
+    }
+  }
   position: fixed;
   top: 0;
   left: 0;
@@ -257,8 +266,8 @@ html {
         @include border-radius(64px);
       }
     }
-    p[role='nav'] {
-      margin-top: 15px;
+    p[role='navigation'] {
+      margin-top: 20px;
     }
     p.bio {
      margin-top: 10px;
@@ -306,7 +315,7 @@ html {
         padding: 20px;
         color: $darkgreen;
         text-decoration: none;
-        background-color: transparentize($lightgreen, .8);
+        background-color: transparentize($lightgreen, .85);
         strong {
           font-family: 'roboto-bold' sans-serif;
         }

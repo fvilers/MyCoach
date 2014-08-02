@@ -184,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\home\change-icon.svg" />
+    <Content Include="assets\images\home\close-icon.svg" />
     <Content Include="assets\images\home\favicon.png" />
     <Content Include="assets\images\home\left.svg" />
     <Content Include="assets\images\home\line.svg" />
@@ -195,10 +196,27 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="assets\stylesheets\screen.css.map" />
+    <Content Include="App_Readme\Handlebarsjs_README.md" />
+    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
+    <Content Include="Scripts\handlebars.amd.js" />
+    <Content Include="Scripts\handlebars.amd.min.js" />
+    <Content Include="Scripts\handlebars.js" />
+    <Content Include="Scripts\handlebars.min.js" />
+    <Content Include="Scripts\handlebars.runtime.amd.js" />
+    <Content Include="Scripts\handlebars.runtime.amd.min.js" />
+    <Content Include="Scripts\handlebars.runtime.js" />
+    <Content Include="Scripts\handlebars.runtime.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\underscore-min.map" />
     <None Include="Scripts\_references.js" />
@@ -223,7 +241,6 @@
     <Content Include="assets\stylesheets\animate.scss" />
     <Content Include="assets\stylesheets\fonts.scss" />
     <Content Include="assets\stylesheets\normalize.scss" />
-    <Content Include="assets\stylesheets\screen.css.map" />
     <Content Include="assets\stylesheets\screen.scss" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">

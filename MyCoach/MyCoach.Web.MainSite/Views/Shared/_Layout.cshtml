@@ -6,6 +6,51 @@
     <link rel="icon" href="@Url.Content("~/assets/images/home/favicon.png")">
     <title>Find a coach, book a session and strat learning something great with My Coatch</title>
     <link rel="stylesheet" href="@Url.Content("~/assets/stylesheets/screen.css")">
+    <style>
+        #search-input
+        {
+            border: 0;
+            display: inline-block;
+            outline: none;
+        }
+
+        #search-keywords
+        {
+            float: left;
+            text-align: left;
+        }
+
+        #search-keywords+p
+        {
+            float: left;
+            
+        }
+
+        #search-keywords li
+        {
+            border: dashed 1px red;
+            display: inline-block;
+            margin-right: 5px;
+            list-style: none;
+            
+        }
+
+        form div
+        {
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        form div input
+        {
+            width: 100%;
+        }
+
+        .tt-dataset-keywords
+        {
+            display: none;
+            }
+    </style>
 </head>
 <body id="home">
     <div id="wrap">
