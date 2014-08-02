@@ -15,10 +15,11 @@ namespace MyCoach.Business.Domain.Model
         public string SkypeId { get; set; }
         public ICollection<ExpertiseDomain> ExpertiseDomains { get; set; }
         public Image Photo { get; set; }
-
+        public ICollection<Schedule> Schedules { get; set; }
         public Coach()
         {
             ExpertiseDomains = new HashSet<ExpertiseDomain>();
+            Schedules = new HashSet<Schedule>();
         }
     }
 }

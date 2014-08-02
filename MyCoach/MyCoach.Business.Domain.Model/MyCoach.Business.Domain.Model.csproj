@@ -53,6 +53,7 @@
     <Compile Include="ExpertiseDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Image.cs" />
+    <Compile Include="Schedule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Model.cd" />
