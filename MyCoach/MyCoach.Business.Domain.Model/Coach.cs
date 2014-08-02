@@ -14,6 +14,7 @@ namespace MyCoach.Business.Domain.Model
         public string Biography { get; set; }
         public string SkypeId { get; set; }
         public ICollection<ExpertiseDomain> ExpertiseDomains { get; set; }
+        public Image Photo { get; set; }
 
         public Coach()
         {

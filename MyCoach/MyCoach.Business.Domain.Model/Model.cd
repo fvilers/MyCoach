@@ -9,18 +9,21 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MyCoach.Business.Domain.Model.ExpertiseDomain">
-    <Position X="6" Y="3.75" Width="1.75" />
+    <Position X="6.75" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>ExpertiseDomain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyCoach.Business.Domain.Model.Coach">
-    <Position X="0.75" Y="3.5" Width="2" />
+    <Position X="3" Y="3.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAQAAAAAAgAAAAAAACAAAAAAAAAAAEAAAAEg=</HashCode>
+      <HashCode>AACAAEAAAQAAACAAgAAAAAAACAAAAAAAAAAAEAAAAEg=</HashCode>
       <FileName>Coach.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Photo" />
+    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="ExpertiseDomains" />
     </ShowAsCollectionAssociation>
@@ -34,10 +37,17 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MyCoach.Business.Domain.Model.Consumer">
-    <Position X="4" Y="1.25" Width="1.5" />
+    <Position X="0.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consumer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyCoach.Business.Domain.Model.Image">
+    <Position X="6.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Image.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="MyCoach.Business.Domain.Model.IEntity" Collapsed="true">
