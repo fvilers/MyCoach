@@ -248,6 +248,7 @@
     <Compile Include="Mappers\CoachDtoMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
     <Compile Include="Mappers\ExpertiseDomainDtoMapper.cs" />
+    <Compile Include="Mappers\ScheduleDtoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

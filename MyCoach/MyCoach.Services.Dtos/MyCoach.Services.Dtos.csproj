@@ -42,6 +42,7 @@
     <Compile Include="CoachDto.cs" />
     <Compile Include="ExpertiseDomainDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyCoach.Shared.Enums\MyCoach.Shared.Enums.csproj">
