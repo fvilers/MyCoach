@@ -35,7 +35,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         }
 
         [Route("")]
-        public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null, [FromUri] decimal? price = null)
+        public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null, [FromUri] decimal? price = null, [FromUri]  int page = 1, [FromUri] int pageSize = 10)
         {
             var query = Coaches;
 
@@ -50,7 +50,9 @@ namespace MyCoach.Web.MainSite.Controllers.Api
                 query = query.Where(coach => coach.Price * (1 - Delta) <= price && coach.Price * (1 + Delta) >= price);
             }
 
-            var coaches = await query.ToArrayAsync();
+            query = query.OrderBy(x => x.Id); // TODO: sort on schedules
+
+            var coaches = await query.Skip((page - 1) * pageSize).Take(pageSize).ToArrayAsync();
             var mapper = new CoachDtoMapper();
             var dtos = coaches.Select(coach => mapper.Map(coach, id => Url.Link("GetPicture", new { id }))).ToArray();
 

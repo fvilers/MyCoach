@@ -14,7 +14,8 @@
     <h1><span><span>My</span>Coach</span>. Find your inspirational help.</h1>
     <form action="">
         <div>
-            <ul id="search-keywords"></ul>
+            <ul id="search-keywords">
+            </ul>
             <p>
                 <input id="search-input" type="search" placeholder="Ex: Piano, today, 2pm, 15$" autofocus autocomplete="off">
             </p>
@@ -71,9 +72,29 @@
                     $li.text(selectedItem.name);
                     $('#search-keywords').append($li);
                     $(this).typeahead('val', '');
+                    getCoaches();
                     $(this).attr('placeholder', '');
                 });
             });
         });
     </script>
 }
+<section id="search-results" data-ng-style="display:none;">
+    <ol></ol>
+</section>
+<script type="text/template" id="coachTmpl">
+    <li>
+        <figure class="coachSnap">
+            <img src="<%= photoUrl %>" alt="<%= firstName %>, <%= lastName %>">
+            <figcaption>
+                <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
+                <p class="bio"><%= biography %>  </p>
+                <p role="navigation">
+                    <% for(var i = 0; i < expertiseDomains.length; i++) { %>
+                    <a class="appTag" href=""><%= expertiseDomains[i].name %></a>
+                    <% } %>
+                </p>
+            </figcaption>
+        </figure>
+    </li>
+</script>
