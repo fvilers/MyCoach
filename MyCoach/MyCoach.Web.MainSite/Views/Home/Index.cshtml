@@ -13,7 +13,12 @@
 <main>
     <h1><span><span>My</span>Coach</span>. Find your inspirational help.</h1>
     <form action="">
-        <input type="search" placeholder="Ex: Piano, today, 2pm, 15$" autofocus>
+        <div>
+            <ul id="search-keywords"></ul>
+            <p>
+                <input id="search-input" type="search" placeholder="Ex: Piano, today, 2pm, 15$" autofocus autocomplete="off">
+            </p>
+        </div>
     </form>
 </main>
 <ol id="testimonial">
@@ -26,3 +31,74 @@
         </h2>
     </li>
 </ol>
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/typeahead.jquery.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/handlebars.js")"></script>
+    <script type="text/javascript">
+        var substringMatcher = function (strs) {
+            return function findMatches(q, cb) {
+                var matches, substrRegex;
+
+                // an array that will be populated with substring matches
+                matches = [];
+
+                // regex used to determine if a string contains the substring `q`
+                substrRegex = new RegExp(q, 'i');
+
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
+                $.each(strs, function (i, item) {
+                    if (substrRegex.test(item.name)) {
+                        // the typeahead jQuery plugin expects suggestions to a
+                        // JavaScript object, refer to typeahead docs for more info
+                        matches.push(item);
+                    }
+                });
+
+                cb(matches);
+            };
+        };
+
+        $(function () {
+            $.getJSON('http://localhost:29071/api/expertise-domains').done(function (data) {
+                $('#search-input').typeahead({
+                    hint: true,
+                    hightlight: true,
+                    minLength: 2
+                }, {
+                    displayKey: 'name',
+                    name: 'keywords',
+                    source: substringMatcher(data),
+                }).bind("typeahead:autocompleted", function (event, selectedItem) {
+                    var $li = $('<li></li>');
+
+                    $li.data('id', selectedItem.id);
+                    $li.text(selectedItem.name);
+                    $('#search-keywords').append($li);
+                    $(this).typeahead('val', '');
+                });
+            });
+
+
+
+
+            //$('#search-input').on('input', function() {
+            //    var value = $(this).val();
+
+            //    if (value.slice(-1) == ' ') {
+            //        $(this).val('');
+            //        var keywords = value.split(' ');
+
+            //        for (var i = 0; i < keywords.length; i++) {
+            //            var keyword = keywords[i];
+            //            if (keyword != '') {
+            //                $('#search-keywords').append('<li>' + keyword + '</li>');
+            //            }
+            //        }
+            //    }
+            //});
+        });
+    </script>
+}
