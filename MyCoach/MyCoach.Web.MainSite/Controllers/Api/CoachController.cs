@@ -23,12 +23,21 @@ namespace MyCoach.Web.MainSite.Controllers.Api
             _coachContext = coachContext;
         }
 
+        private IQueryable<Coach> Coaches
+        {
+            get
+            {
+                return _coachContext.ApplicationUsers.OfType<Coach>()
+                                                    .Include(x => x.ExpertiseDomains)
+                                                    .Include(x => x.Photo)
+                                                    .Include(x => x.Schedules);
+            }
+        }
+
         [Route("")]
         public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null, [FromUri] decimal? price = null)
         {
-            var query = _coachContext.ApplicationUsers.OfType<Coach>()
-                                                      .Include(x => x.ExpertiseDomains)
-                                                      .Include(x => x.Schedules);
+            var query = Coaches;
 
             if (keywords != null)
             {
@@ -43,7 +52,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
 
             var coaches = await query.ToArrayAsync();
             var mapper = new CoachDtoMapper();
-            var dtos = coaches.Select(mapper.Map).ToArray();
+            var dtos = coaches.Select(coach => mapper.Map(coach, id => Url.Link("GetPicture", new { id }))).ToArray();
 
             return Ok(dtos);
         }
@@ -51,9 +60,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         [Route("{id:int}")]
         public async Task<IHttpActionResult> Get(int id)
         {
-            var query = from x in _coachContext.ApplicationUsers.OfType<Coach>()
-                                                                .Include(x => x.ExpertiseDomains)
-                                                                .Include(x => x.Schedules)
+            var query = from x in Coaches
                         where x.Id == id
                         select x;
             var mapper = new CoachDtoMapper();
@@ -64,7 +71,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
                 return NotFound();
             }
 
-            var dto = mapper.Map(coach);
+            var dto = mapper.Map(coach, pictureId => Url.Link("GetPicture", new { id = pictureId }));
 
             return Ok(dto);
         }

@@ -13,6 +13,7 @@ namespace MyCoach.Services.Dtos
         public string Biography { get; set; }
         public string Summary { get; set; }
         public string SkypeId { get; set; }
+        public string PhotoUrl { get; set; }
         public IEnumerable<ExpertiseDomainDto> ExpertiseDomains { get; set; }
         public IEnumerable<ScheduleDto> Schedules { get; set; }
     }
