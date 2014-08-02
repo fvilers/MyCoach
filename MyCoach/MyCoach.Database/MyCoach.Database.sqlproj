@@ -62,8 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\ExpertiseDomains.sql" />
-    <Build Include="dbo\Tables\CoachProfiles.sql" />
     <Build Include="dbo\Tables\ApplicationUsers.sql" />
-    <Build Include="dbo\Tables\CoachProfileExpertiseDomains.sql" />
+    <Build Include="dbo\Tables\Schedules.sql" />
+    <Build Include="dbo\Tables\Images.sql" />
+    <Build Include="dbo\Tables\CoachExpertiseDomains.sql" />
+    <Build Include="dbo\Tables\Coaches.sql" />
   </ItemGroup>
 </Project>
