@@ -46,13 +46,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
-    <Compile Include="CoachProfile.cs" />
+    <Compile Include="Coach.cs" />
+    <Compile Include="Consumer.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="ExpertiseDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Model.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

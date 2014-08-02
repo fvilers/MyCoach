@@ -1,3 +1,4 @@
+using System.Linq;
 using MyCoach.Business.Domain.Model;
 using MyCoach.Shared.Collections.Extensions;
 using MyCoach.Shared.Enums;
@@ -47,17 +48,19 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "jQuery", Slug = "jquery" });
             context.SaveChanges();
 
-            var fvilers = new CoachProfile
+            var fvilers = new Coach
             {
+                UserName = "fabian@vilers.net",
                 FirstName = "Fabian",
                 LastName = "Vilers",
                 Biography = "Je suis le meilleur",
                 Price = 50,
-                Currency = Currency.Euro
+                Currency = Currency.Euro,
+                SkypeId = "fabianvilers"
             };
             fvilers.ExpertiseDomains.AddRange(dev, csharp);
 
-            context.CoachProfiles.AddOrUpdate(x => new { x.FirstName, x.LastName }, fvilers);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, fvilers);
         }
     }
 }

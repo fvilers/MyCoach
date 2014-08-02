@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MyCoach.Services.Dtos
 {
-    public class CoachProfileDto
+    public class CoachDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

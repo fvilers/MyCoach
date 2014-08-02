@@ -1,4 +1,5 @@
-﻿using MyCoach.Data.EntityFramework;
+﻿using MyCoach.Business.Domain.Model;
+using MyCoach.Data.EntityFramework;
 using MyCoach.Web.MainSite.Mappers;
 using System;
 using System.Data.Entity;
@@ -23,8 +24,8 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         [Route("")]
         public IHttpActionResult Get()
         {
-            var keywords = _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains).ToArray();
-            var mapper = new CoachProfileDtoMapper();
+            var keywords = _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains).ToArray();
+            var mapper = new CoachDtoMapper();
             var dtos = keywords.Select(mapper.Map).ToArray();
 
             return Ok(dtos);
