@@ -72,7 +72,7 @@
                     $li.text(selectedItem.name);
                     $('#search-keywords').append($li);
                     $(this).typeahead('val', '');
-                    getCoaches();
+                    getCoaches(1);
                     $(this).attr('placeholder', '');
                 });
             });
@@ -83,7 +83,7 @@
     <ol></ol>
 </section>
 <script type="text/template" id="coachTmpl">
-    <li>
+    <li class="coach" data-id="<%= id %>">
         <figure class="coachSnap">
             <img src="<%= photoUrl %>" alt="<%= firstName %>, <%= lastName %>">
             <figcaption>
