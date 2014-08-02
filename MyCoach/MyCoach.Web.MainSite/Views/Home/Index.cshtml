@@ -13,7 +13,15 @@
 <main>
     <h1><span><span>My</span>Coach</span>. Find your inspirational help.</h1>
     <form action="">
-        <input type="search" placeholder="Ex: Piano, today, 2pm, 15$" autofocus>
+        <div>
+            <ul id="search-keywords">
+                <li data-id="1">Development</li>
+                <li data-id="6">testa</li>
+            </ul>
+            <p>
+                <input id="search-input" type="search" placeholder="Ex: Piano, today, 2pm, 15$" autofocus autocomplete="off">
+            </p>
+        </div>
     </form>
 </main>
 <ol id="testimonial">
@@ -26,3 +34,22 @@
         </h2>
     </li>
 </ol>
+<section id="search-results" data-ng-style="display:none;">
+    <ol></ol>
+</section>
+<script type="text/template" id="coachTmpl">
+    <li>
+        <figure class="coachSnap">
+            <img src="<%= photoUrl %>" alt="<%= firstName %>, <%= lastName %>">
+            <figcaption>
+                <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
+                <p class="bio"><%= biography %>  </p>
+                <p role="navigation">
+                    <% for(var i = 0; i < expertiseDomains.length; i++) { %>
+                    <a class="appTag" href=""><%= expertiseDomains[i].name %></a>
+                    <% } %>
+                </p>
+            </figcaption>
+        </figure>
+    </li>
+</script>

@@ -196,8 +196,13 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Scripts\underscore-min.map" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\underscore.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />

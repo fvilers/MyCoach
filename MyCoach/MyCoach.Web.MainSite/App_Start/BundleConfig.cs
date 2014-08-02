@@ -9,7 +9,8 @@ namespace MyCoach.Web.MainSite
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include("~/Scripts/jquery-{version}.js")
                 .Include("~/Scripts/site.js")
-            );
+                .Include("~/Scripts/underscore.js")
+                .Include("~/Scripts/home.js"));
 
             //bundles.Add(new ScriptBundle("~/bundles/jqueryval")
             //    .Include("~/Scripts/jquery.validate.js")
