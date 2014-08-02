@@ -4,6 +4,7 @@ using MyCoach.Web.MainSite.Mappers;
 using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -22,13 +23,40 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         }
 
         [Route("")]
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null)
         {
-            var keywords = _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains).ToArray();
+            var query = _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains);
+
+            if (keywords != null)
+            {
+                query = query.Where(coachProfile =>
+                    keywords.All(keywordId => coachProfile.ExpertiseDomains.Any(expertiseDomain => keywordId == expertiseDomain.Id)));
+            }
+
+            var coachProfiles = await query.ToArrayAsync();
             var mapper = new CoachDtoMapper();
-            var dtos = keywords.Select(mapper.Map).ToArray();
+            var dtos = coachProfiles.Select(mapper.Map).ToArray();
 
             return Ok(dtos);
+        }
+
+        [Route("{id:int}")]
+        public async Task<IHttpActionResult> Get(int id)
+        {
+            var query = from x in _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains)
+                        where x.Id == id
+                        select x;
+            var mapper = new CoachDtoMapper();
+            var coachProfile = await query.FirstOrDefaultAsync();
+
+            if (coachProfile == null)
+            {
+                return NotFound();
+            }
+
+            var dto = mapper.Map(coachProfile);
+
+            return Ok(dto);
         }
     }
 }
