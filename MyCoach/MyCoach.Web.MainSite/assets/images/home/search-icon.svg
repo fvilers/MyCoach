@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="33px" height="31px" viewBox="0 0 33 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>Home</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Home" sketch:type="MSArtboardGroup" transform="translate(-865.000000, -381.000000)" fill="#FFFFFF">
+            <rect id="Rectangle-4" sketch:type="MSShapeGroup" transform="translate(892.000000, 406.500000) rotate(-45.000000) translate(-892.000000, -406.500000) " x="890" y="400" width="4" height="13" rx="2"></rect>
+            <path d="M879,409 C886.731986,409 893,402.731986 893,395 C893,387.268014 886.731986,381 879,381 C871.268014,381 865,387.268014 865,395 C865,402.731986 871.268014,409 879,409 Z M879,405 C884.522847,405 889,400.522847 889,395 C889,389.477153 884.522847,385 879,385 C873.477153,385 869,389.477153 869,395 C869,400.522847 873.477153,405 879,405 Z" id="Oval-1" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

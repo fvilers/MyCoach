@@ -183,6 +183,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\home\change-icon.svg" />
+    <Content Include="assets\images\home\favicon.png" />
+    <Content Include="assets\images\home\left.svg" />
+    <Content Include="assets\images\home\line.svg" />
+    <Content Include="assets\images\home\loading.gif" />
+    <Content Include="assets\images\home\right.svg" />
+    <Content Include="assets\images\home\search-icon.svg" />
+    <Content Include="assets\images\users\julia-vumilia.jpg" />
+    <Content Include="assets\stylesheets\screen.css" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
@@ -192,6 +201,22 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="assets\fonts\roboto-bold.eot" />
+    <Content Include="assets\fonts\roboto-bold.ttf" />
+    <Content Include="assets\fonts\roboto-bold.woff" />
+    <Content Include="assets\fonts\roboto-light.eot" />
+    <Content Include="assets\fonts\roboto-light.ttf" />
+    <Content Include="assets\fonts\roboto-light.woff" />
+    <Content Include="assets\stylesheets\.sass-cache\a31aca8b78f6bef626f2c4ef732ff1c43268dd15\animate.scssc" />
+    <Content Include="assets\stylesheets\.sass-cache\a31aca8b78f6bef626f2c4ef732ff1c43268dd15\fonts.scssc" />
+    <Content Include="assets\stylesheets\.sass-cache\a31aca8b78f6bef626f2c4ef732ff1c43268dd15\normalize.scssc" />
+    <Content Include="assets\stylesheets\.sass-cache\a31aca8b78f6bef626f2c4ef732ff1c43268dd15\screen.scssc" />
+    <Content Include="assets\stylesheets\.sass-cache\a31aca8b78f6bef626f2c4ef732ff1c43268dd15\variables.scssc" />
+    <Content Include="assets\stylesheets\animate.scss" />
+    <Content Include="assets\stylesheets\fonts.scss" />
+    <Content Include="assets\stylesheets\normalize.scss" />
+    <Content Include="assets\stylesheets\screen.css.map" />
+    <Content Include="assets\stylesheets\screen.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

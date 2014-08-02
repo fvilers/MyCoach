@@ -1,0 +1,341 @@
+// IMPORT
+
+@import 'fonts','normalize', 'animate';
+
+// Variables
+
+$lightgreen: #5BCE4F;
+$green: #2D9F22;
+$darkgreen: #062803;
+$white: #ffffff;
+$grey: #D8D8D8;
+$yellow: #FBE4AE;
+$orange: #FFB400;
+$greenblack: #063F00;
+
+@mixin border-radius($value) {
+  border-radius: $value;
+  -moz-border-radius: $value;
+  -webkit-border-radius: $value;
+  -o-webkit-border-radius: $value;
+}
+
+html {
+  font-family: 'roboto-light' sans-serif;
+  background-color: $green;
+}
+
+// HOME
+
+#home {
+  color: $white;
+  nav {
+    margin-bottom: 80px;
+    padding: 30px;
+    text-align: right;
+    font-size: .8em;
+    a {
+      text-decoration: none;
+      color: inherit;
+      &+a {
+        margin-left: 30px;
+      }
+      &:hover {
+       color: $darkgreen;
+      }
+      &.coach {
+        border: 1px solid $lightgreen;
+        padding: 10px 20px;
+        @include border-radius(20px);
+        &:hover {
+          border-color: $darkgreen;
+          color: $white;
+          background-color: $darkgreen;
+        }
+      }
+    }
+  }
+
+  // SEARCH TOOLS
+
+  main {
+    opacity: 0;
+    text-align: center;
+    h1 {
+      font-weight: normal;
+      margin-bottom: 30px;
+      span {
+        font-family: roboto-bold;
+        color: $white;
+        span {
+          color: $darkgreen;
+        }
+      }
+    }
+    input[type='search'] {
+      outline: none;
+      width: 60%;
+      border: 0;
+      padding: 15px;
+      @include border-radius(4px);
+      font-size: 1.5em;
+      color: $darkgreen;
+      background: #FFFFFF;
+      -moz-box-shadow: 0px 1px 3px 0px rgba(33,130,24,0.80);
+      -webkit-box-shadow: 0px 1px 3px 0px rgba(33,130,24,0.80);
+      box-shadow: 0px 1px 3px 0px rgba(33,130,24,0.80);
+      &:focus {
+
+      }
+    }
+  }
+
+  // TESTIMONIAL
+
+  #testimonial {
+    padding-top: 40px;
+    opacity: 0;
+    list-style: none;
+    width: 60%;
+    margin: 40px auto;
+    font-size: .7em;
+    text-align: center;
+    li {
+      border: 1px dotted $lightgreen;
+      border-width: 1px 0 0 0;
+      padding: 30px;
+    }
+    h1 {
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 1.2em;
+      line-height: 2.7em;
+      a {
+        color: $white;
+        line-height: 2em;
+        text-decoration: none;
+        &:hover {
+          color: $darkgreen;
+        }
+      }
+    }
+    img {
+      margin-bottom: 10px;
+      width: 80px;
+      @include border-radius(40px);
+    }
+  }
+
+  // TAGS
+
+  .appTag {
+    display: inline-block;
+    @include border-radius(20px);
+    background-color: #0A4805;
+    padding: 0 15px;
+    color: $white!important;
+    text-decoration: none;
+    &:hover {
+      border-color: $white;
+      color: $darkgreen !important;
+      background-color: $white;
+    }
+  }
+
+  // RESULTS
+
+  #search-results {
+    margin: 40px auto;
+    width: 60%;
+    li {
+      list-style: none;
+      margin: 30px 0 15px;
+      .coachSnap {
+        display: block;
+        padding: 10px 10px 10px 85px;
+        text-decoration: none;
+        color: $white;
+        &:hover {
+          cursor: pointer;
+          @include border-radius(7px);
+          background-color: transparentize($lightgreen, .5);
+        }
+      }
+      figure {
+        position: relative;
+        overflow: hidden;
+      }
+      img {
+        width: 60px;
+        @include border-radius(4px);
+        position: absolute;
+        left: 10px;
+      }
+      figcaption {
+        p {
+          padding: 5px 0;
+          &.bio {
+            line-height: 2em;
+          }
+          &[role='nav'] {
+            margin-top: 10px;
+            @include border-radius(4px);
+
+          }
+        }
+        .rate {
+          padding-left: 15px;
+          background: url(../images/home/change-icon.svg) no-repeat left center;
+        }
+      }
+      &+li {
+        border: 1px dotted $lightgreen;
+        border-width: 1px 0 0 0;
+        padding-top: 30px;
+      }
+      &.loading {
+        border: 0;
+        background: url(../images/home/loading.gif) no-repeat center center;
+      }
+    }
+    .appTag {
+      font-size: .8em !important;
+      padding: 3px 15px;
+     }
+  }
+}
+
+// AVAILABLE BADGE
+
+  .available {
+    span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      @include border-radius(5px);
+      background-color: $orange;
+    }
+  }
+
+// POP HOVER
+
+#pophover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  section {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 630px;
+    height: 520px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    @include border-radius(4px);
+    color: $darkgreen;
+    background-color: $white;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 2px 26px 0px, rgba(0, 0, 0, 0.0980392) 0px 0px 0px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.298039) 0px 2px 26px 0px, rgba(0, 0, 0, 0.0980392) 0px 0px 0px 1px;
+    -o-box-shadow: rgba(0, 0, 0, 0.298039) 0px 2px 26px 0px, rgba(0, 0, 0, 0.0980392) 0px 0px 0px 1px;
+    .coachSnap {
+      img {
+        margin-bottom: 15px;
+        width: 128px;
+        @include border-radius(64px);
+      }
+    }
+    p[role='nav'] {
+      margin-top: 15px;
+    }
+    p.bio {
+     margin-top: 10px;
+    }
+    .appTag {
+      border: 1px solid transparentize($grey, .1)!important;
+      font-size: .9em;
+      color: $darkgreen !important;
+      line-height: 2em!important;
+      background-color: $white!important;
+    }
+  }
+
+  // DATE PICKING
+
+  #datePicking {
+    margin-top: 10px;
+    position: relative;
+    &>a {
+      display: block;
+      position: absolute;
+      padding: 21px 2px;
+      opacity: .5;
+      right: -15px;
+      bottom: 0;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    p {
+      padding: 14px 20px 25px 20px;
+      span {
+        padding: 0 10px;
+        background-color: $white;
+      }
+      background: url(../images/home/line.svg) repeat-x center;
+    }
+    li {
+      list-style: none;
+      display: inline-block;
+      a {
+        display: inline-block;
+        @include border-radius(4px);
+        width: 180px;
+        padding: 20px;
+        color: $darkgreen;
+        text-decoration: none;
+        background-color: transparentize($lightgreen, .8);
+        strong {
+          font-family: 'roboto-bold' sans-serif;
+        }
+        &:hover {
+          color: $white;
+          background-color: $green;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,28 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+
+<header>
+    <nav>
+        <a href="">Create an account</a>
+        <span>-or-</span>
+        <a href="">Login</a>
+        <a class="coach" href="">Register as a coach</a>
+    </nav>
+</header>
+<main>
+    <h1><span><span>My</span>Coach</span>. Find your inspirational help.</h1>
+    <form action="">
+        <input type="search" placeholder="Ex: Piano, today, 2pm, 15$" autofocus>
+    </form>
+</main>
+<ol id="testimonial">
+    <li>
+        <img src="@Url.Content("~/assets/images/users/julia-vumilia.jpg")" alt="Julia Vumilia Vira">
+        <h1>&ldquo;It's like finding the right advice to the right person.&rdquo;</h1>
+        <h2>
+            <a href="">Read her story</a>. Julia learns in:<br />
+            <a class="appTag" href="">Fashion</a> <a class="appTag" href="">Branding</a> <a class="appTag" href="">Planning</a><br />
+        </h2>
+    </li>
+</ol>
