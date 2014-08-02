@@ -195,6 +195,9 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -217,6 +220,7 @@
     <Content Include="assets\stylesheets\normalize.scss" />
     <Content Include="assets\stylesheets\screen.css.map" />
     <Content Include="assets\stylesheets\screen.scss" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
