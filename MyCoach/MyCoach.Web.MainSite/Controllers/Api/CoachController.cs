@@ -22,7 +22,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         }
 
         [Route("")]
-        public async Task<IHttpActionResult> Get([FromUri] int[] keywords = null)
+        public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null)
         {
             var query = _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains);
 
