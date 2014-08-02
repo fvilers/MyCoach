@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
 using MyCoach.Business.Domain.Model;
 using MyCoach.Shared.Collections.Extensions;
 using MyCoach.Shared.Enums;
 using MyCoach.Shared.Reflection.Extensions;
+using System;
 
 namespace MyCoach.Data.EntityFramework.Migrations
 {
@@ -18,12 +17,9 @@ namespace MyCoach.Data.EntityFramework.Migrations
 
         protected override void Seed(MyCoachContext context)
         {
-            var scheduleStart = DateTime.Now.AddDays(1);
-            scheduleStart = new DateTime(scheduleStart.Year, scheduleStart.Month, scheduleStart.Day, 8, 0, 0);
-
             var dev = new ExpertiseDomain { Name = "Development", Slug = "development" };
             var csharp = new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" };
-
+            
             context.Keywords.AddOrUpdate(x => x.Name, dev);
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "JavaScript", Slug = "javascript" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Agile", Slug = "agile" });
@@ -354,7 +350,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "sylvainguerin",
                 Photo = sylvainPicture,
             };
-            sylvain.ExpertiseDomains.AddRange(dev,csharp);
+            sylvain.ExpertiseDomains.AddRange(dev, csharp);
 
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, terrence);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, louise);
@@ -371,17 +367,17 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, frederick);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, janice);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, sylvain);
-
             context.SaveChanges();
 
-            var schedule = new Schedule { StartDateTime = scheduleStart.AddHours(1), Duration = 1 };
-            sylvain.Schedules.AddRange(schedule);
-            context.Schedules.Add(schedule);
+            var scheduleStart = DateTime.Today.AddDays(1).AddHours(8);
+            var schedule1 = new Schedule { StartDateTime = scheduleStart.AddHours(1), Duration = 1 };
+            var schedule2 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 1 };
 
-            schedule = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 1 };
-            sylvain.Schedules.AddRange(schedule);
-            context.Schedules.Add(schedule);
+            context.Schedules.Add(schedule1);
+            context.Schedules.Add(schedule2);
+            context.SaveChanges();
 
+            sylvain.Schedules.AddRange(schedule1, schedule2);
         }
     }
 }
