@@ -9,6 +9,7 @@ namespace MyCoach.Business.Domain.Model
         public string LastName { get; set; }
         public decimal Price { get; set; }
         public Currency Currency { get; set; }
+        public string Summary { get; set; }
         public string Biography { get; set; }
         public ICollection<ExpertiseDomain> ExpertiseDomains { get; set; }
 
