@@ -343,7 +343,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "sylvain_guerin@yahoo.com",
                 FirstName = "Sylvain",
                 LastName = "Guerin",
-                Summary = "",
+                Summary = "I am a highly skilled and experienced consultant specialising in the technical analysis and design of software and system architecture.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 40,
                 Currency = Currency.Dollar,
