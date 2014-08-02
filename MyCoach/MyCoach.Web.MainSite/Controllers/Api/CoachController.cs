@@ -14,6 +14,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
     [RoutePrefix("api/coaches")]
     public class CoachController : ApiController
     {
+        private const decimal Delta = 0.20m;
         private readonly IMyCoachContext _coachContext;
 
         public CoachController(IMyCoachContext coachContext)
@@ -23,7 +24,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         }
 
         [Route("")]
-        public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null)
+        public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null, [FromUri] decimal? price = null)
         {
             var query = _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains);
 
@@ -31,6 +32,11 @@ namespace MyCoach.Web.MainSite.Controllers.Api
             {
                 query = query.Where(coachProfile =>
                     keywords.All(keywordId => coachProfile.ExpertiseDomains.Any(expertiseDomain => keywordId == expertiseDomain.Id)));
+            }
+
+            if (price != null)
+            {
+                query = query.Where(coachProfile => coachProfile.Price * (1 - Delta) <= price && coachProfile.Price * (1 + Delta) >= price);
             }
 
             var coachProfiles = await query.ToArrayAsync();
