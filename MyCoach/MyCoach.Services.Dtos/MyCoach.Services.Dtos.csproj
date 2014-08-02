@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoachProfileDto.cs" />
+    <Compile Include="CoachDto.cs" />
     <Compile Include="ExpertiseDomainDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

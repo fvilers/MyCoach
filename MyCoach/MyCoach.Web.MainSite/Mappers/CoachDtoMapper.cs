@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace MyCoach.Web.MainSite.Mappers
 {
-    public class CoachProfileDtoMapper : IMapper<CoachProfile, CoachProfileDto>
+    public class CoachDtoMapper : IMapper<Coach, CoachDto>
     {
-        public CoachProfileDto Map(CoachProfile source)
+        public CoachDto Map(Coach source)
         {
             if (source == null) throw new ArgumentNullException("source");
 
-            var result = new CoachProfileDto
+            var result = new CoachDto
             {
                 Id = source.Id,
                 FirstName = source.FirstName,

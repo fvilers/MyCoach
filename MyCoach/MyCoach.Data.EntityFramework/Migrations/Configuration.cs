@@ -1,3 +1,4 @@
+using System.Linq;
 using MyCoach.Business.Domain.Model;
 using MyCoach.Shared.Collections.Extensions;
 using MyCoach.Shared.Enums;
@@ -47,18 +48,20 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "jQuery", Slug = "jquery" });
             context.SaveChanges();
 
-            var fvilers = new CoachProfile
+            var fvilers = new Coach
             {
+                UserName = "fabian@vilers.net",
                 FirstName = "Fabian",
                 LastName = "Vilers",
                 Summary = "Je suis le meilleur",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 50,
-                Currency = Currency.Euro
+                Currency = Currency.Euro,
+                SkypeId = "fabianvilers"
             };
             fvilers.ExpertiseDomains.AddRange(dev, csharp);
 
-            context.CoachProfiles.AddOrUpdate(x => new { x.FirstName, x.LastName }, fvilers);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, fvilers);
         }
     }
 }

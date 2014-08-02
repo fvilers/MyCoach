@@ -3,10 +3,11 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace MyCoach.Data.EntityFramework.TypeConfigurations
 {
-    public class CoachProfileTypeConfiguration : EntityTypeConfiguration<CoachProfile>
+    public class CoachTypeConfiguration : EntityTypeConfiguration<Coach>
     {
-        public CoachProfileTypeConfiguration()
+        public CoachTypeConfiguration()
         {
+            ToTable("Coaches");
             HasMany(x => x.ExpertiseDomains).WithMany();
         }
     }

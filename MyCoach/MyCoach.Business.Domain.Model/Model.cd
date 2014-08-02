@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyCoach.Business.Domain.Model.ApplicationUser">
+    <Position X="1.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>ApplicationUser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyCoach.Business.Domain.Model.ExpertiseDomain">
+    <Position X="6" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>ExpertiseDomain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyCoach.Business.Domain.Model.Coach">
+    <Position X="0.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAQAAAAAAgAAAAAAACAAAAAAAAAAAEAAAAEg=</HashCode>
+      <FileName>Coach.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ExpertiseDomains" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MyCoach.Business.Domain.Model.Entity&lt;TEntity&gt;" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Entity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyCoach.Business.Domain.Model.Consumer">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consumer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MyCoach.Business.Domain.Model.IEntity" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

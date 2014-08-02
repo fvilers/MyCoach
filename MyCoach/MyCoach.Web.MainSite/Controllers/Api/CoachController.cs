@@ -1,4 +1,5 @@
-﻿using MyCoach.Data.EntityFramework;
+﻿using MyCoach.Business.Domain.Model;
+using MyCoach.Data.EntityFramework;
 using MyCoach.Web.MainSite.Mappers;
 using System;
 using System.Data.Entity;
@@ -25,7 +26,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         [Route("")]
         public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null, [FromUri] decimal? price = null)
         {
-            var query = _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains);
+            var query = _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains);
 
             if (keywords != null)
             {
@@ -39,7 +40,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
             }
 
             var coachProfiles = await query.ToArrayAsync();
-            var mapper = new CoachProfileDtoMapper();
+            var mapper = new CoachDtoMapper();
             var dtos = coachProfiles.Select(mapper.Map).ToArray();
 
             return Ok(dtos);
@@ -48,10 +49,10 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         [Route("{id:int}")]
         public async Task<IHttpActionResult> Get(int id)
         {
-            var query = from x in _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains)
+            var query = from x in _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains)
                         where x.Id == id
                         select x;
-            var mapper = new CoachProfileDtoMapper();
+            var mapper = new CoachDtoMapper();
             var coachProfile = await query.FirstOrDefaultAsync();
 
             if (coachProfile == null)

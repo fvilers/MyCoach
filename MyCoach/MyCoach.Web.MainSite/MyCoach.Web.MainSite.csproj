@@ -240,7 +240,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mappers\CoachProfileDtoMapper.cs" />
+    <Compile Include="Mappers\CoachDtoMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
     <Compile Include="Mappers\ExpertiseDomainDtoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
