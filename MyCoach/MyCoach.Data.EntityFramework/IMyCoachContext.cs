@@ -8,5 +8,6 @@ namespace MyCoach.Data.EntityFramework
         IDbSet<ApplicationUser> ApplicationUsers { get; }
         IDbSet<Image> Images { get; }
         IDbSet<ExpertiseDomain> Keywords { get; }
+        IDbSet<Schedule> Schedules { get; }
     }
 }

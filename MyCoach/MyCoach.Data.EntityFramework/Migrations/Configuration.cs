@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using MyCoach.Business.Domain.Model;
 using MyCoach.Shared.Collections.Extensions;
 using MyCoach.Shared.Enums;
@@ -16,6 +18,9 @@ namespace MyCoach.Data.EntityFramework.Migrations
 
         protected override void Seed(MyCoachContext context)
         {
+            var scheduleStart = DateTime.Now.AddDays(1);
+            scheduleStart = new DateTime(scheduleStart.Year, scheduleStart.Month, scheduleStart.Day, 8, 0, 0);
+
             var dev = new ExpertiseDomain { Name = "Development", Slug = "development" };
             var csharp = new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" };
 
@@ -347,9 +352,9 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 Price = 40,
                 Currency = Currency.Dollar,
                 SkypeId = "sylvainguerin",
-                Photo = sylvainPicture
+                Photo = sylvainPicture,
             };
-            sylvain.ExpertiseDomains.AddRange();
+            sylvain.ExpertiseDomains.AddRange(dev,csharp);
 
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, terrence);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, louise);
@@ -366,6 +371,17 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, frederick);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, janice);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, sylvain);
+
+            context.SaveChanges();
+
+            var schedule = new Schedule { StartDateTime = scheduleStart.AddHours(1), Duration = 1 };
+            sylvain.Schedules.AddRange(schedule);
+            context.Schedules.Add(schedule);
+
+            schedule = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 1 };
+            sylvain.Schedules.AddRange(schedule);
+            context.Schedules.Add(schedule);
+
         }
     }
 }

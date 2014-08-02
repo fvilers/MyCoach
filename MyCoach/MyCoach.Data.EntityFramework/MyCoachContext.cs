@@ -10,6 +10,7 @@ namespace MyCoach.Data.EntityFramework
         public IDbSet<ApplicationUser> ApplicationUsers { get; set; }
         public IDbSet<Image> Images { get; set; }
         public IDbSet<ExpertiseDomain> Keywords { get; set; }
+        public IDbSet<Schedule> Schedules { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

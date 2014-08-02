@@ -9,6 +9,7 @@ namespace MyCoach.Data.EntityFramework.TypeConfigurations
         {
             ToTable("Coaches");
             HasMany(x => x.ExpertiseDomains).WithMany();
+            HasMany(x => x.Schedules).WithRequired();
             HasOptional(x => x.Photo);
         }
     }
