@@ -1,27 +1,3 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-
-<h2>Bienvenue sur MyCoach @User.Identity.Name</h2>
-
-@using (Html.BeginForm("Search", "Home"))
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-group">
-        <input id="search-input" type="text" class="form-control" />
-    </div>
-    
-    <button type="submit" class="btn btn-default">Rechercher</button>
-}
-
-@section scripts
-{
-    <script type="text/javascript">
-        $(function() {
-            $('#search-input').on('input', function () {
-                console.log($(this).val());
-            });
-        });
-    </script>
-}

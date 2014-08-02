@@ -4,22 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title &middot; MyCoach</title>
-    @Styles.Render("~/Content/css")
-    <style>
-        body {
-            padding-top: 50px;
-        }
-    </style>
 </head>
 <body>
-    @Html.Partial("_NavigationPartial")
-
-    <div class="container">
-        @RenderBody()
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderBody()
 </body>
 </html>
