@@ -37,5 +37,24 @@ namespace MyCoach.Web.MainSite.Controllers.Api
 
             return Ok(dtos);
         }
+
+        [Route("{id:int}")]
+        public IHttpActionResult Get(int id)
+        {
+            var query = from x in _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains)
+                        where x.Id == id
+                        select x;
+            var mapper = new CoachProfileDtoMapper();
+            var coachProfile = query.FirstOrDefault();
+
+            if (coachProfile == null)
+            {
+                return NotFound();
+            }
+
+            var dto = mapper.Map(coachProfile);
+
+            return Ok(dto);
+        }
     }
 }
