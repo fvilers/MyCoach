@@ -1,6 +1,7 @@
 using MyCoach.Business.Domain.Model;
 using MyCoach.Shared.Collections.Extensions;
 using MyCoach.Shared.Enums;
+using MyCoach.Shared.Reflection.Extensions;
 
 namespace MyCoach.Data.EntityFramework.Migrations
 {
@@ -47,20 +48,324 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Business process", Slug = "business-process" });
             context.SaveChanges();
 
-            var fvilers = new Coach
+            var terrencePicture = new Image
             {
-                UserName = "fabian@vilers.net",
-                FirstName = "Fabian",
-                LastName = "Vilers",
-                Summary = "Je suis le meilleur",
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Terrence.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var louisePicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Louise.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var brianPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Brian.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var trinaPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Trina.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var michaelPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Michael.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var emiliaPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Emilia.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var isaacPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Isaac.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var dorothyPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Dorothy.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var vincentPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Vincent.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var renaPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Rena.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var jeffreyPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Jeffrey.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var amandaPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Amanda.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var frederickPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Frederick.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var janicePicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Janice.jpg"),
+                ContentType = "image/jpeg"
+            };
+            var sylvainPicture = new Image
+            {
+                Content = typeof(Configuration).Assembly.GetManifestResource("MyCoach.Data.EntityFramework.Resources.Sylvain.jpg"),
+                ContentType = "image/jpeg"
+            };
+
+            context.Images.Add(terrencePicture);
+            context.Images.Add(louisePicture);
+            context.Images.Add(brianPicture);
+            context.Images.Add(trinaPicture);
+            context.Images.Add(michaelPicture);
+            context.Images.Add(emiliaPicture);
+            context.Images.Add(isaacPicture);
+            context.Images.Add(dorothyPicture);
+            context.Images.Add(vincentPicture);
+            context.Images.Add(renaPicture);
+            context.Images.Add(jeffreyPicture);
+            context.Images.Add(amandaPicture);
+            context.Images.Add(frederickPicture);
+            context.Images.Add(janicePicture);
+            context.Images.Add(sylvainPicture);
+            context.SaveChanges();
+
+            var terrence = new Coach
+            {
+                UserName = "TerrenceRBlake@dayrep.com",
+                FirstName = "Terrence",
+                LastName = "Blake",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 30,
+                Currency = Currency.Dollar,
+                SkypeId = "Thoures",
+                Photo = terrencePicture
+            };
+            terrence.ExpertiseDomains.AddRange();
+
+            var louise = new Coach
+            {
+                UserName = "LouiseZBorg@rhyta.com",
+                FirstName = "Louise",
+                LastName = "Borg",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 19,
+                Currency = Currency.Dollar,
+                SkypeId = "Livize",
+                Photo = louisePicture
+            };
+            louise.ExpertiseDomains.AddRange();
+
+            var brian = new Coach
+            {
+                UserName = "BrianLPatterson@jourrapide.com",
+                FirstName = "Brian",
+                LastName = "Patterson",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 52,
+                Currency = Currency.Dollar,
+                SkypeId = "Cholove",
+                Photo = brianPicture
+            };
+            brian.ExpertiseDomains.AddRange();
+
+            var trina = new Coach
+            {
+                UserName = "TrinaCDavid@rhyta.com",
+                FirstName = "Trina",
+                LastName = "David",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 44,
+                Currency = Currency.Dollar,
+                SkypeId = "Threp1959",
+                Photo = trinaPicture
+            };
+            trina.ExpertiseDomains.AddRange();
+
+            var michael = new Coach
+            {
+                UserName = "MichaelDMason@rhyta.com",
+                FirstName = "Michael",
+                LastName = "Mason",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 52,
+                Currency = Currency.Dollar,
+                SkypeId = "Foreasked",
+                Photo = michaelPicture
+            };
+            michael.ExpertiseDomains.AddRange();
+
+            var emilia = new Coach
+            {
+                UserName = "EmiliaDBrady@jourrapide.com",
+                FirstName = "Emilia",
+                LastName = "Brady",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 54,
+                Currency = Currency.Dollar,
+                SkypeId = "Headen",
+                Photo = emiliaPicture
+            };
+            emilia.ExpertiseDomains.AddRange();
+
+            var isaac = new Coach
+            {
+                UserName = "IsaacEWilliams@teleworm.us",
+                FirstName = "Isaac",
+                LastName = "Williams",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 32,
+                Currency = Currency.Dollar,
+                SkypeId = "Eaciall",
+                Photo = isaacPicture
+            };
+            isaac.ExpertiseDomains.AddRange();
+
+            var dorothy = new Coach
+            {
+                UserName = "DorothyJJackson@teleworm.us",
+                FirstName = "Dorothy",
+                LastName = "Jackson",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 19,
+                Currency = Currency.Dollar,
+                SkypeId = "Thout1994",
+                Photo = dorothyPicture
+            };
+            dorothy.ExpertiseDomains.AddRange();
+
+            var vincent = new Coach
+            {
+                UserName = "VincentMCampos@armyspy.com",
+                FirstName = "Vincent",
+                LastName = "Campos",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 35,
+                Currency = Currency.Dollar,
+                SkypeId = "Throom",
+                Photo = vincentPicture
+            };
+            vincent.ExpertiseDomains.AddRange();
+
+            var rena = new Coach
+            {
+                UserName = "RenaKMiller@rhyta.com",
+                FirstName = "Rena",
+                LastName = "Miller",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 46,
+                Currency = Currency.Dollar,
+                SkypeId = "Derstly",
+                Photo = renaPicture
+            };
+            rena.ExpertiseDomains.AddRange();
+
+            var jeffrey = new Coach
+            {
+                UserName = "JeffreyBowser@rhyta.com",
+                FirstName = "Jeffrey",
+                LastName = "Bowser",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 47,
+                Currency = Currency.Dollar,
+                SkypeId = "Knellf67",
+                Photo = jeffreyPicture
+            };
+            jeffrey.ExpertiseDomains.AddRange();
+
+            var amanda = new Coach
+            {
+                UserName = "AmandaDNelson@jourrapide.com",
+                FirstName = "Amanda",
+                LastName = "Nelson",
+                Summary = "",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 50,
-                Currency = Currency.Euro,
-                SkypeId = "fabianvilers"
+                Currency = Currency.Dollar,
+                SkypeId = "Afroping1963",
+                Photo = amandaPicture
             };
-            fvilers.ExpertiseDomains.AddRange(dev, csharp);
+            amanda.ExpertiseDomains.AddRange();
 
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, fvilers);
+            var frederick = new Coach
+            {
+                UserName = "FrederickLEuler@jourrapide.com",
+                FirstName = "Frederick",
+                LastName = "Euler",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 54,
+                Currency = Currency.Dollar,
+                SkypeId = "Somplet59",
+                Photo = frederickPicture
+            };
+            frederick.ExpertiseDomains.AddRange();
+
+            var janice = new Coach
+            {
+                UserName = "JaniceRNewell@jourrapide.com",
+                FirstName = "Janice",
+                LastName = "Newell",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 27,
+                Currency = Currency.Dollar,
+                SkypeId = "Youreand87",
+                Photo = janicePicture
+            };
+            janice.ExpertiseDomains.AddRange();
+
+            var sylvain = new Coach
+            {
+                UserName = "sylvain_guerin@yahoo.com",
+                FirstName = "Sylvain",
+                LastName = "Guerin",
+                Summary = "",
+                Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
+                Price = 40,
+                Currency = Currency.Dollar,
+                SkypeId = "sylvainguerin",
+                Photo = sylvainPicture
+            };
+            sylvain.ExpertiseDomains.AddRange();
+
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, terrence);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, louise);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, brian);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, trina);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, michael);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, emilia);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, isaac);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, dorothy);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, vincent);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, rena);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, jeffrey);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, amanda);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, frederick);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, janice);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, sylvain);
         }
     }
 }

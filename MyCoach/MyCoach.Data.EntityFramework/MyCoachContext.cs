@@ -8,6 +8,7 @@ namespace MyCoach.Data.EntityFramework
     public class MyCoachContext : ContextBase, IMyCoachContext
     {
         public IDbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public IDbSet<Image> Images { get; set; }
         public IDbSet<ExpertiseDomain> Keywords { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

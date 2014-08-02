@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +82,27 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Trina.jpg" />
+    <EmbeddedResource Include="Resources\Emilia.jpg" />
+    <EmbeddedResource Include="Resources\Dorothy.jpg" />
+    <EmbeddedResource Include="Resources\Rena.jpg" />
+    <EmbeddedResource Include="Resources\Brian.jpg" />
+    <EmbeddedResource Include="Resources\Michael.jpg" />
+    <EmbeddedResource Include="Resources\Vincent.jpg" />
+    <EmbeddedResource Include="Resources\Jeffrey.jpg" />
+    <EmbeddedResource Include="Resources\Frederick.jpg" />
+    <EmbeddedResource Include="Resources\Isaac.jpg" />
+    <EmbeddedResource Include="Resources\Janice.jpg" />
+    <EmbeddedResource Include="Resources\Amanda.jpg" />
+    <EmbeddedResource Include="Resources\Louise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Terrence.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sylvain.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
