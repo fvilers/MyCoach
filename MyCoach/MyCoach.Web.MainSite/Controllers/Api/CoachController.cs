@@ -21,11 +21,16 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         }
 
         [Route("")]
-        public IHttpActionResult Get([FromUri] int[] keywords)
+        public IHttpActionResult Get([FromUri] int[] keywords = null)
         {
-            var query = from x in _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains)
-                        where keywords.All(keywordId => x.ExpertiseDomains.Any(expertiseDomain => keywordId == expertiseDomain.Id))
-                        select x;
+            var query = _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains);
+
+            if (keywords != null)
+            {
+                query = query.Where(coachProfile =>
+                    keywords.All(keywordId => coachProfile.ExpertiseDomains.Any(expertiseDomain => keywordId == expertiseDomain.Id)));
+            }
+
             var coachProfiles = query.ToArray();
             var mapper = new CoachProfileDtoMapper();
             var dtos = coachProfiles.Select(mapper.Map).ToArray();
