@@ -3,6 +3,7 @@ using MyCoach.Web.MainSite.Mappers;
 using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -21,7 +22,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         }
 
         [Route("")]
-        public IHttpActionResult Get([FromUri] int[] keywords = null)
+        public async Task<IHttpActionResult> Get([FromUri] int[] keywords = null)
         {
             var query = _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains);
 
@@ -31,7 +32,7 @@ namespace MyCoach.Web.MainSite.Controllers.Api
                     keywords.All(keywordId => coachProfile.ExpertiseDomains.Any(expertiseDomain => keywordId == expertiseDomain.Id)));
             }
 
-            var coachProfiles = query.ToArray();
+            var coachProfiles = await query.ToArrayAsync();
             var mapper = new CoachProfileDtoMapper();
             var dtos = coachProfiles.Select(mapper.Map).ToArray();
 
@@ -39,13 +40,13 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         }
 
         [Route("{id:int}")]
-        public IHttpActionResult Get(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
             var query = from x in _coachContext.CoachProfiles.Include(x => x.ExpertiseDomains)
                         where x.Id == id
                         select x;
             var mapper = new CoachProfileDtoMapper();
-            var coachProfile = query.FirstOrDefault();
+            var coachProfile = await query.FirstOrDefaultAsync();
 
             if (coachProfile == null)
             {

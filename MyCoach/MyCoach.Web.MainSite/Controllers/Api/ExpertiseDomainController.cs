@@ -1,7 +1,9 @@
 ﻿using MyCoach.Data.EntityFramework;
 using MyCoach.Web.MainSite.Mappers;
 using System;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -21,9 +23,9 @@ namespace MyCoach.Web.MainSite.Controllers.Api
 
         [HttpGet]
         [Route("")]
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get()
         {
-            var keywords = _coachContext.Keywords.ToArray();
+            var keywords = await _coachContext.Keywords.ToArrayAsync();
             var mapper = new ExpertiseDomainDtoMapper();
             var dtos = keywords.Select(mapper.Map).ToArray();
 
