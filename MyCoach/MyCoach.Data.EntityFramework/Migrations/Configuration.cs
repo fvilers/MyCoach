@@ -1,4 +1,3 @@
-using System.Linq;
 using MyCoach.Business.Domain.Model;
 using MyCoach.Shared.Collections.Extensions;
 using MyCoach.Shared.Enums;
@@ -16,19 +15,6 @@ namespace MyCoach.Data.EntityFramework.Migrations
 
         protected override void Seed(MyCoachContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-
             var dev = new ExpertiseDomain { Name = "Development", Slug = "development" };
             var csharp = new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" };
 
@@ -46,6 +32,19 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Hardware", Slug = "hardware" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "IT", Slug = "it" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "jQuery", Slug = "jquery" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Fashion", Slug = "fashion" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Branding", Slug = "branding" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Planning", Slug = "planning" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Gardening", Slug = "gardening" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Self development", Slug = "self-development" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Financial", Slug = "financial" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Music", Slug = "music" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Guitar", Slug = "guitar" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Piano", Slug = "piano" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Drums", Slug = "drums" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Sport", Slug = "sport" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Running", Slug = "running" });
+            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Business process", Slug = "business-process" });
             context.SaveChanges();
 
             var fvilers = new Coach

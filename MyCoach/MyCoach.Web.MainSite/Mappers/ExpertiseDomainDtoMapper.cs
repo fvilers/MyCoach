@@ -13,8 +13,7 @@ namespace MyCoach.Web.MainSite.Mappers
             var result = new ExpertiseDomainDto
             {
                 Id = source.Id,
-                Name = source.Name,
-                Slug = source.Slug
+                Name = source.Name
             };
 
             return result;
