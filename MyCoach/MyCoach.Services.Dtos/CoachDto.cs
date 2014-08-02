@@ -14,5 +14,6 @@ namespace MyCoach.Services.Dtos
         public string Summary { get; set; }
         public string SkypeId { get; set; }
         public IEnumerable<ExpertiseDomainDto> ExpertiseDomains { get; set; }
+        public IEnumerable<ScheduleDto> Schedules { get; set; }
     }
 }

@@ -21,7 +21,8 @@ namespace MyCoach.Web.MainSite.Mappers
                 Biography = source.Biography,
                 Summary = source.Summary,
                 SkypeId = source.SkypeId,
-                ExpertiseDomains = source.ExpertiseDomains.Select(new ExpertiseDomainDtoMapper().Map).ToArray()
+                ExpertiseDomains = source.ExpertiseDomains.Select(new ExpertiseDomainDtoMapper().Map).ToArray(),
+                Schedules = source.Schedules.Select(new ScheduleDtoMapper().Map).ToArray()
             };
 
             return result;

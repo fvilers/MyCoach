@@ -26,22 +26,24 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         [Route("")]
         public async Task<IHttpActionResult> Get([FromUri(Name = "keyword")] int[] keywords = null, [FromUri] decimal? price = null)
         {
-            var query = _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains);
+            var query = _coachContext.ApplicationUsers.OfType<Coach>()
+                                                      .Include(x => x.ExpertiseDomains)
+                                                      .Include(x => x.Schedules);
 
             if (keywords != null)
             {
-                query = query.Where(coachProfile =>
-                    keywords.All(keywordId => coachProfile.ExpertiseDomains.Any(expertiseDomain => keywordId == expertiseDomain.Id)));
+                query = query.Where(coach =>
+                    keywords.All(keywordId => coach.ExpertiseDomains.Any(expertiseDomain => keywordId == expertiseDomain.Id)));
             }
 
             if (price != null)
             {
-                query = query.Where(coachProfile => coachProfile.Price * (1 - Delta) <= price && coachProfile.Price * (1 + Delta) >= price);
+                query = query.Where(coach => coach.Price * (1 - Delta) <= price && coach.Price * (1 + Delta) >= price);
             }
 
-            var coachProfiles = await query.ToArrayAsync();
+            var coaches = await query.ToArrayAsync();
             var mapper = new CoachDtoMapper();
-            var dtos = coachProfiles.Select(mapper.Map).ToArray();
+            var dtos = coaches.Select(mapper.Map).ToArray();
 
             return Ok(dtos);
         }
@@ -49,18 +51,20 @@ namespace MyCoach.Web.MainSite.Controllers.Api
         [Route("{id:int}")]
         public async Task<IHttpActionResult> Get(int id)
         {
-            var query = from x in _coachContext.ApplicationUsers.OfType<Coach>().Include(x => x.ExpertiseDomains)
+            var query = from x in _coachContext.ApplicationUsers.OfType<Coach>()
+                                                                .Include(x => x.ExpertiseDomains)
+                                                                .Include(x => x.Schedules)
                         where x.Id == id
                         select x;
             var mapper = new CoachDtoMapper();
-            var coachProfile = await query.FirstOrDefaultAsync();
+            var coach = await query.FirstOrDefaultAsync();
 
-            if (coachProfile == null)
+            if (coach == null)
             {
                 return NotFound();
             }
 
-            var dto = mapper.Map(coachProfile);
+            var dto = mapper.Map(coach);
 
             return Ok(dto);
         }

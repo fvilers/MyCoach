@@ -47,12 +47,12 @@
   <Class Name="MyCoach.Business.Domain.Model.Image">
     <Position X="6.75" Y="5.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Image.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyCoach.Business.Domain.Model.Schedule">
-    <Position X="6.75" Y="7" Width="1.75" />
+    <Position X="6.75" Y="7.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Schedule.cs</FileName>
