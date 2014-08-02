@@ -40,8 +40,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{39DDC22C-DC7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18B30A73-121F-45F7-BBE0-46DE68F49301}"
 	ProjectSection(SolutionItems) = preProject
-		SqlDataCompare1.dcmp = SqlDataCompare1.dcmp
-		SqlSchemaCompare1.scmp = SqlSchemaCompare1.scmp
+		SqlDataCompare.dcmp = SqlDataCompare.dcmp
+		SqlSchemaCompare.scmp = SqlSchemaCompare.scmp
 	EndProjectSection
 EndProject
 Global

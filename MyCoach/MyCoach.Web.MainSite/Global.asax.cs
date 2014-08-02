@@ -10,7 +10,6 @@ namespace MyCoach.Web.MainSite
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            DatabaseConfig.Initialize();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
