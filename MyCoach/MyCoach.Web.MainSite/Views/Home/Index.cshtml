@@ -58,96 +58,116 @@
     </li>
 </script>
 
-<script type="text/template" id="pophoverTemplate">
-    <div id="pophover">
-        <section>
-            <a id="close" href="#"><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?" /></a>
-            <figure class="coachSnap">
-                <img src="<%= photoUrl %>" alt="Coach <%= firstName %>">
-                <figcaption>
-                    <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
-                    <p class="bio">
-                        <%= summary %>
-                    </p>
-                    <p role="navigation">
-                        <% for(var i = 0; i < expertiseDomains.length; i++) { %>
-                            <span class="appTag"><%= expertiseDomains[i].name %></span>
-                        <% } %>
-                    </p>
-                </figcaption>
-            </figure>
-            <div id="datePicking">
-                <a href=""><img src="@Url.Content("~/assets/images/home/right.svg")" alt="Right"></a>
-                <p><span>Pick a slot</span></p>
-                <ol>
-                    <% for(var i = 0; i < schedules.length; i++) { %>
-                    <li>
-                        <a href="">
-                            <strong><%= schedules[i].startDateTime %></strong><br />
-                            <span class="available"><span></span> Available now</span>
-                        </a>
-                    </li>
-                    <% } %>
-                </ol>
+<script type="text/template" id="paymentTemplate">
+    <section class="payAndGo">
+        <a id="close" href=""><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?"></a>
+        <h1>You are about too book <%= firstName %> for a coaching, please can you just confirm:</h1>
+        <div class="infoOrder">
+            <div class="cardInfo">
+                Eurocard/Mastercard ***-1881<br />
+                <%= firstName %> <%= lastName %><br />
+                01/2017<br />
+                <a href="">Change?</a>
             </div>
-        </section>
-    </div>
+            <div class="rateOrder">
+                <strong><%= price %></strong><sup><%= currency %>$</sup><br />
+                <span>per hour</span>
+            </div>
+        </div>
+        <button>It's ok, <span>I want to start now</span></button>
+    </section>
 </script>
 
-@section scripts
-{
-    <script type="text/javascript" src="@Url.Content("~/Scripts/typeahead.jquery.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/handlebars.js")"></script>
-    <script type="text/javascript">
-            var substringMatcher = function (strs) {
-            return function findMatches(q, cb) {
-                var matches, substrRegex;
+    <script type="text/template" id="pophoverTemplate">
+        <div id="pophover">
+            <section data-id="<%= id %>">
+                <a id="close" href="#"><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?" /></a>
+                <figure class="coachSnap">
+                    <img src="<%= photoUrl %>" alt="Coach <%= firstName %>">
+                    <figcaption>
+                        <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
+                        <p class="bio">
+                            <%= summary %>
+                        </p>
+                        <p role="navigation">
+                            <% for(var i = 0; i < expertiseDomains.length; i++) { %>
+                            <span class="appTag"><%= expertiseDomains[i].name %></span>
+                            <% } %>
+                        </p>
+                    </figcaption>
+                </figure>
+                <div id="datePicking">
+                    <a href=""><img src="@Url.Content("~/assets/images/home/right.svg")" alt="Right"></a>
+                    <p><span>Pick a slot</span></p>
+                    <ol>
+                        <% for(var i = 0; i < schedules.length; i++) { %>
+                        <li>
+                            <a href="" class="booking-coach">
+                                <strong><%= schedules[i].startDateTime %></strong><br />
+                                <span class="available"><span></span> Available now</span>
+                            </a>
+                        </li>
+                        <% } %>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </script>
 
-                matches = [];
-                substrRegex = new RegExp(q, 'i');
+    @section scripts
+{
+        <script type="text/javascript" src="@Url.Content("~/Scripts/typeahead.jquery.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/handlebars.js")"></script>
+        <script type="text/javascript">
+            var substringMatcher = function (strs) {
+                return function findMatches(q, cb) {
+                    var matches, substrRegex;
+
+                    matches = [];
+                    substrRegex = new RegExp(q, 'i');
 
                     $.each(strs, function (i, item) {
-                    if (substrRegex.test(item.name)) {
-                        if ($('#search-keywords li:contains(' + item.name + ')').length == 0) {
-                            matches.push(item);
+                        if (substrRegex.test(item.name)) {
+                            if ($('#search-keywords li:contains(' + item.name + ')').length == 0) {
+                                matches.push(item);
+                            }
                         }
-                    }
-                });
+                    });
 
-                cb(matches);
+                    cb(matches);
+                };
             };
-        };
 
             $(function () {
                 $.getJSON('http://localhost:29071/api/expertise-domains').done(function (data) {
-                $('#search-input').typeahead({
-                    hint: true,
-                    hightlight: false,
-                    minLength: 2
-                }, {
-                    displayKey: 'name',
-                    name: 'keywords',
-                    source: substringMatcher(data),
+                    $('#search-input').typeahead({
+                        hint: true,
+                        hightlight: false,
+                        minLength: 2
+                    }, {
+                        displayKey: 'name',
+                        name: 'keywords',
+                        source: substringMatcher(data),
                     }).bind("typeahead:autocompleted", function (event, selectedItem) {
-                    var $li = $('<li></li>');
+                        var $li = $('<li></li>');
 
-                    $li.data('id', selectedItem.id);
-                    $li.text(selectedItem.name);
-                    $('#search-keywords').append($li);
-                    $(this).typeahead('val', '');
-                    getCoaches(1);
-                    $(this).attr('placeholder', '');
+                        $li.data('id', selectedItem.id);
+                        $li.text(selectedItem.name);
+                        $('#search-keywords').append($li);
+                        $(this).typeahead('val', '');
+                        getCoaches(1);
+                        $(this).attr('placeholder', '');
                     }).keyup(function (e) {
-                    if (e.keyCode == 8 && $(this).val() == '') {
-                        $('#search-keywords li:last').remove();
-                        getCoaches();
+                        if (e.keyCode == 8 && $(this).val() == '') {
+                            $('#search-keywords li:last').remove();
+                            getCoaches();
 
-                        if ($('#search-keywords li').length == 0) {
-                            $(this).blur().focus();
-                        };
-                    }
+                            if ($('#search-keywords li').length == 0) {
+                                $(this).blur().focus();
+                            };
+                        }
+                    });
                 });
-            });
 
                 $(document).on('click', '.coachSnap', function () {
                     var id = $(this).data('id');
@@ -161,25 +181,25 @@
                         $('#pophover').show();
                     });
                 });
-        });
+            });
+        </script>
+    }
+    <section id="search-results" data-ng-style="display:none;">
+        <ol></ol>
+    </section>
+    <script type="text/template" id="coachTmpl">
+        <li>
+            <figure class="coachSnap">
+                <img src="<%= photoUrl %>" alt="<%= firstName %>, <%= lastName %>">
+                <figcaption>
+                    <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
+                    <p class="bio"><%= summary %>  </p>
+                    <p role="navigation">
+                        <% for(var i = 0; i < expertiseDomains.length; i++) { %>
+                        <a class="appTag" href=""><%= expertiseDomains[i].name %></a>
+                        <% } %>
+                    </p>
+                </figcaption>
+            </figure>
+        </li>
     </script>
-}
-<section id="search-results" data-ng-style="display:none;">
-    <ol></ol>
-</section>
-<script type="text/template" id="coachTmpl">
-    <li>
-        <figure class="coachSnap">
-            <img src="<%= photoUrl %>" alt="<%= firstName %>, <%= lastName %>">
-            <figcaption>
-                <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
-                <p class="bio"><%= summary %>  </p>
-                <p role="navigation">
-                    <% for(var i = 0; i < expertiseDomains.length; i++) { %>
-                    <a class="appTag" href=""><%= expertiseDomains[i].name %></a>
-                    <% } %>
-                </p>
-            </figcaption>
-        </figure>
-    </li>
-</script>

@@ -47,7 +47,8 @@
 })();
 
 
-$(document).on('click', '#loadingSection button', function loadNext(e) {
+$(document)
+.on('click', '#loadingSection button', function loadNext(e) {
     $(e.target).parent('#loadingSection').hide();
 
 
@@ -58,7 +59,20 @@ $(document).on('click', '#loadingSection button', function loadNext(e) {
             $(e.target).parent('#loadingSection').hide();
             $(document).off('click', '#loadingSection button', loadNext);
         }
-        
+    });
+})
+.on('click', 'a.booking-coach', function (e) {
+    e.preventDefault();
+    var coachId = $(e.target).parents('#pophover').children('section').data('id');
+    var url = '/api/coaches/' + coachId;
+    $.getJSON(url).done(function (result) {
+        if (!!result) {
+            var markup = $('#paymentTemplate').html();
+            var tmpl = _.template(markup);
+            var html = tmpl(result);
+            $('#pophover').empty().html(html);            
+        }
+
     });
 
 });
