@@ -214,6 +214,9 @@
     <Content Include="assets\fonts\roboto-regular.eot" />
     <Content Include="assets\fonts\roboto-regular.ttf" />
     <Content Include="assets\fonts\roboto-regular.woff" />
+    <Content Include="assets\fonts\sansus.eot" />
+    <Content Include="assets\fonts\sansus.ttf" />
+    <Content Include="assets\fonts\sansus.woff" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\bloodhound.js" />
