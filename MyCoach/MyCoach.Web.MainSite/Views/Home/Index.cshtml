@@ -89,9 +89,18 @@
         });
     </script>
 }
-<section id="search-results" data-ng-style="display:none;">
+<section id="search-results" style="display:none;">
     <ol></ol>
+    
+    
+    <section id="loadingSection" style="display:none;">
+        <button>load next...</button>
+    </section>
+
 </section>
+
+
+
 <script type="text/template" id="coachTmpl">
     <li class="coach" data-id="<%= id %>">
         <figure class="coachSnap">

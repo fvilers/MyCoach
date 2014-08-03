@@ -33,8 +33,13 @@
 
             currentPage++;
 
+            if (result.length === pageSize) {
+                $('#loadingSection').show();
+            }
+            
+
             if (typeof callback === 'function') {
-                callback();
+                callback(result.length < pageSize);
             }
             
         });
@@ -42,50 +47,18 @@
 })();
 
 
-function getNextCoaches() {
-    var load = false; // aucun chargement de commentaire n'est en cours
-    var maxReached = false;
- 
-    /* la fonction offset permet de récupérer la valeur X et Y d'un élément
-	dans une page. Ici on récupère la position du dernier div qui 
-	a pour classe : ".commentaire" */
-    var offset = $('li.coach:last').offset();
-
-    $(window).scroll(function() { // On surveille l'évènement scroll
-
-        /* Si l'élément offset est en bas de scroll, si aucun chargement 
-		n'est en cours, si le nombre de commentaire affiché est supérieur 
-		à 5 et si tout les commentaires ne sont pas affichés, alors on 
-		lance la fonction. */
-        if ((offset.top - $(window).height() <= $(window).scrollTop())
-            && load == false && ($('li.coach').size() > 0) && !maxReached) {
-
-            // la valeur passe à vrai, on va charger
-            load = true;
-
-            //On récupère l'id du dernier commentaire affiché
-            var last_id = $('li.coach:last').data('id');
-
-            //On affiche un loader
-            //$('.loadmore').show();
-
-            //On lance la fonction ajax
-            //$.ajax({});
-            //var markup = $('#coachTmpl').text();
-            //var tmpl = _.template(markup);
-            //var html = '<li class="coach" data-id="X">sdqfqsdfqsdfqsdfdsq</li>';
-            //$(document).find('#search-results').find('ol').append(html);
+$(document).on('click', '#loadingSection button', function loadNext(e) {
+    $(e.target).parent('#loadingSection').hide();
 
 
-            getCoaches(null, function() {
-                offset = $('li.coach:last').offset();
-                //On remet la valeur à faux car c'est fini
-                load = false;
-            });
+    getCoaches(null, function(hasFinished) {
+        $(e.target).parent('#loadingSection').show();
 
-            //offset = $('li.coach:last').offset();
-            ////On remet la valeur à faux car c'est fini
-            //load = false;
+        if (hasFinished) {
+            $(e.target).parent('#loadingSection').hide();
+            $(document).off('click', '#loadingSection button', loadNext);
         }
+        
     });
-}
+
+});
