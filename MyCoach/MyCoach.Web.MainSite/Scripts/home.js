@@ -60,7 +60,7 @@ $(document)
     $(e.target).parent('#loadingSection').hide();
 
 
-    getCoaches(null, function(hasFinished) {
+    getCoaches(null, function (hasFinished) {
         $(e.target).parent('#loadingSection').show();
 
         if (hasFinished) {
@@ -78,9 +78,83 @@ $(document)
             var markup = $('#paymentTemplate').html();
             var tmpl = _.template(markup);
             var html = tmpl(result);
-            $('#pophover').empty().html(html);            
+            $('#pophover').empty().html(html);
         }
 
     });
 
+});
+
+window.substringMatcher = function (strs) {
+    return function findMatches(q, cb) {
+        var matches, substrRegex;
+
+        matches = [];
+        substrRegex = new RegExp(q, 'i');
+
+        $.each(strs, function (i, item) {
+            if (substrRegex.test(item.name)) {
+                if ($('#search-keywords li:contains(' + item.name + ')').length == 0) {
+                    matches.push(item);
+                }
+            }
+        });
+
+        cb(matches);
+    };
+};
+
+$(function () {
+    $.getJSON('http://localhost:29071/api/expertise-domains').done(function (data) {
+        $('#search-input').typeahead({
+            hint: true,
+            hightlight: false,
+            minLength: 2
+        }, {
+            displayKey: 'name',
+            name: 'keywords',
+            source: substringMatcher(data),
+        }).bind("typeahead:autocompleted", function (event, selectedItem) {
+            var $li = $('<li></li>');
+
+            $li.data('id', selectedItem.id);
+            $li.text(selectedItem.name);
+            $('#search-keywords').append($li);
+            $(this).typeahead('val', '');
+            getCoaches(1);
+            $(this).attr('placeholder', '');
+        }).keyup(function (e) {
+            if (e.keyCode == 8 && $(this).val() == '') {
+                $('#search-keywords li:last').remove();
+
+                if ($('#search-keywords li').length == 0) {
+                    $('#search-results ol li').remove();
+                    $(this).blur().focus();
+                } else {
+                    getCoaches();
+                };
+            }
+        }).focus();
+    });
+
+    $('form div').click(function () {
+        $('#search-input').focus();
+    });
+
+    $(document).on('click', '.coachSnap', function () {
+        var id = $(this).data('id');
+
+        $.getJSON('http://localhost:29071/api/coaches/' + id).done(function (data) {
+            var markup = $('#pophoverTemplate').text();
+            var tmpl = _.template(markup);
+            var html = tmpl(data);
+
+            $('#home').append(html);
+            $('#pophover').show();
+        });
+    });
+
+    $(document).on('click', '#close', function () {
+        $('#pophover').remove();
+    });
 });
