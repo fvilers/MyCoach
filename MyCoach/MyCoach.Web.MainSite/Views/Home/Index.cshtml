@@ -83,8 +83,16 @@
                     <% for(var i = 0; i < schedules.length; i++) { %>
                     <li>
                         <a href="">
-                            <strong><%= schedules[i].startDateTime %></strong><br />
-                            <span class="available"><span></span> Available now</span>
+                            <% if ((moment().isAfter(moment(schedules[i].startDateTime))) && (moment().isBefore(moment(schedules[i].startDateTime).add('hours', schedules[i].duration)))) { %>
+                                <strong><%= moment(schedules[i].startDateTime).format('dddd, DD/MM') %></strong><br />
+                                <span class="available"><span></span> Available now</span>
+                            <% } else if (moment().isSame(schedules[i].startDateTime, 'day')) { %>
+                                <strong><%= moment().format('dddd, DD/MM') %></strong><br />
+                                <%= moment(schedules[i].startDateTime).fromNow() %>
+                            <% } else { %>
+                                <strong><%= moment(schedules[i].startDateTime).format('dddd, DD/MM') %></strong><br/>
+                                <%= moment(schedules[i].startDateTime).format('HHa') %> to <%= moment().add('hours', schedules[i].duration).format('HHa') %>
+                            <% } %>
                         </a>
                     </li>
                     <% } %>
@@ -98,6 +106,7 @@
 {
     <script type="text/javascript" src="@Url.Content("~/Scripts/typeahead.jquery.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/handlebars.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/moment.js")"></script>
     <script type="text/javascript">
         var substringMatcher = function (strs) {
             return function findMatches(q, cb) {
@@ -168,22 +177,3 @@
         });
     </script>
 }
-<section id="search-results" data-ng-style="display:none;">
-    <ol></ol>
-</section>
-<script type="text/template" id="coachTmpl">
-    <li>
-        <figure class="coachSnap">
-            <img src="<%= photoUrl %>" alt="<%= firstName %>, <%= lastName %>">
-            <figcaption>
-                <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
-                <p class="bio"><%= summary %>  </p>
-                <p role="navigation">
-                    <% for(var i = 0; i < expertiseDomains.length; i++) { %>
-                    <a class="appTag" href=""><%= expertiseDomains[i].name %></a>
-                    <% } %>
-                </p>
-            </figcaption>
-        </figure>
-    </li>
-</script>
