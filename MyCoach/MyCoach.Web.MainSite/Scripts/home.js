@@ -16,7 +16,9 @@
             return 'keyword=' + id;
         }).toArray().concat('page=' + page, 'pageSize=' + pageSize);
         var url = base + qs.join('&');
-        $.getJSON(url).done(function (result) {
+        $.getJSON(url).done(function (data) {
+            var allFetched = data.allFetched;
+            var result = data.coaches;
             var markup = $('#coachTmpl').text();
             var tmpl = _.template(markup);
             var html = result.map(function (coach) {
@@ -29,19 +31,25 @@
             }
 
             $(document).find('#testimonial').hide();
-            $(document).find('#search-results').show();
 
-            currentPage++;
+            if (result.length > 0) {
+                $(document).find('#search-results').show();
 
-            if (result.length === pageSize) {
-                $('#loadingSection').show();
+                currentPage++;
+
+                if (!allFetched) {
+                    $('#loadingSection').show();
+                }
+
+
+                if (typeof callback === 'function') {
+                    callback(allFetched);
+                }
+            } else {
+                $('#loadingSection').hide();
             }
-            
 
-            if (typeof callback === 'function') {
-                callback(result.length < pageSize);
-            }
-            
+
         });
     }
 })();
@@ -57,7 +65,7 @@ $(document)
 
         if (hasFinished) {
             $(e.target).parent('#loadingSection').hide();
-            $(document).off('click', '#loadingSection button', loadNext);
+            //$(document).off('click', '#loadingSection button', loadNext);
         }
     });
 })
