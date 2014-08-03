@@ -373,14 +373,16 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.SaveChanges();
 
             var scheduleStart = DateTime.Today.AddDays(1).AddHours(8);
-            var schedule1 = new Schedule { StartDateTime = scheduleStart.AddHours(1), Duration = 1 };
-            var schedule2 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 1 };
+            var schedule1 = new Schedule { StartDateTime = DateTime.Today.AddHours(16), Duration = 4 };
+            var schedule2 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 2 };
+            var schedule3 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 2 };
 
             context.Schedules.Add(schedule1);
             context.Schedules.Add(schedule2);
+            context.Schedules.Add(schedule3);
             context.SaveChanges();
 
-            sylvain.Schedules.AddRange(schedule1, schedule2);
+            sylvain.Schedules.AddRange(schedule1, schedule2, schedule3);
         }
     }
 }
