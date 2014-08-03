@@ -9,13 +9,15 @@ namespace MyCoach.Web.MainSite
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include("~/Scripts/jquery-{version}.js")
                 .Include("~/Scripts/site.js")
-                .Include("~/Scripts/underscore.js")
-                .Include("~/Scripts/home.js"));
+                .Include("~/Scripts/underscore.js"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/jqueryval")
-            //    .Include("~/Scripts/jquery.validate.js")
-            //    .Include("~/Scripts/jquery.validate.unobtrusive.js")
-            //);
+
+            bundles.Add(new ScriptBundle("~/bundles/home")
+                .Include("~/Scripts/typeahead.jquery.js")
+                .Include("~/Scripts/handlebars.js")
+                .Include("~/Scripts/moment.js")
+                .Include("~/Scripts/home.js")
+            );
 
             //bundles.Add(new ScriptBundle("~/bundles/bootstrap")
             //    .Include("~/Scripts/bootstrap.js")
