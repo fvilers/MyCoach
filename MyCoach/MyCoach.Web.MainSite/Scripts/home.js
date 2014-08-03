@@ -16,7 +16,9 @@
             return 'keyword=' + id;
         }).toArray().concat('page=' + page, 'pageSize=' + pageSize);
         var url = base + qs.join('&');
-        $.getJSON(url).done(function (result) {
+        $.getJSON(url).done(function (data) {
+            var allFetched = data.allFetched;
+            var result = data.coaches;
             var markup = $('#coachTmpl').text();
             var tmpl = _.template(markup);
             var html = result.map(function (coach) {
@@ -29,25 +31,32 @@
             }
 
             $(document).find('#testimonial').hide();
-            $(document).find('#search-results').show();
 
-            currentPage++;
+            if (result.length > 0) {
+                $(document).find('#search-results').show();
 
-            if (result.length === pageSize) {
-                $('#loadingSection').show();
+                currentPage++;
+
+                if (!allFetched) {
+                    $('#loadingSection').show();
+                }
+
+
+                if (typeof callback === 'function') {
+                    callback(allFetched);
+                }
+            } else {
+                $('#loadingSection').hide();
             }
-            
 
-            if (typeof callback === 'function') {
-                callback(result.length < pageSize);
-            }
-            
+
         });
     }
 })();
 
 
-$(document).on('click', '#loadingSection button', function loadNext(e) {
+$(document)
+.on('click', '#loadingSection button', function loadNext(e) {
     $(e.target).parent('#loadingSection').hide();
 
 
@@ -56,9 +65,22 @@ $(document).on('click', '#loadingSection button', function loadNext(e) {
 
         if (hasFinished) {
             $(e.target).parent('#loadingSection').hide();
-            $(document).off('click', '#loadingSection button', loadNext);
+            //$(document).off('click', '#loadingSection button', loadNext);
         }
-        
+    });
+})
+.on('click', 'a.booking-coach', function (e) {
+    e.preventDefault();
+    var coachId = $(e.target).parents('#pophover').children('section').data('id');
+    var url = '/api/coaches/' + coachId;
+    $.getJSON(url).done(function (result) {
+        if (!!result) {
+            var markup = $('#paymentTemplate').html();
+            var tmpl = _.template(markup);
+            var html = tmpl(result);
+            $('#pophover').empty().html(html);            
+        }
+
     });
 
 });

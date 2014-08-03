@@ -1,3 +1,28 @@
+// Watcher
+
+@mixin animation {
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-property: all;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+}
+
 #home main {
   -moz-animation-delay: 500ms;
   -moz-animation-duration: 1000ms;
@@ -218,5 +243,61 @@
   }
   50% {
     background-color: #fff;
+  }
+}
+
+.loading img {
+  -moz-animation-duration: 1000ms;
+  -moz-animation-name: turnBg;
+  -moz-animation-fill-mode: forwards;
+  -moz-transform-origin: center center;
+  -moz-transform-style: preserve-3D;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-name: turnBg;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-transform-origin: center center;
+  -webkit-transform-style: preserve-3D;
+  -o-animation-duration: 1000ms;
+  -o-animation-name: turnBg;
+  -o-animation-fill-mode: forwards;
+  -o-transform-origin: center center;
+  -o-transform-style: preserve-3D;
+  -ms-animation-duration: 1000ms;
+  -ms-animation-name: turnBg;
+  -ms-animation-fill-mode: forwards;
+  -ms-transform-origin: center center;
+  -ms-transform-style: preserve-3D;
+}
+
+@-moz-keyframes turnBg {
+  0%{
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes turnBg {
+  0%{
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+@-o-keyframes turnBg {
+  0%{
+     -oz-transform: rotate(0deg);
+  }
+  100% {
+    -oz-transform: rotate(180deg);
+  }
+}
+@-ms-keyframes turnBg {
+  0%{
+     -oz-transform: rotate(0deg);
+  }
+  100% {
+    -oz-transform: rotate(180deg);
   }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="52px" height="96px" viewBox="0 0 52 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 14</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Home" sketch:type="MSArtboardGroup" transform="translate(-842.000000, -643.000000)">
+            <path d="M848.008871,643 C842.481124,643 840.304236,646.840394 843.14013,651.566884 L868,693 L892.85987,651.566884 C895.698685,646.835524 893.514786,643 887.991129,643 L848.008871,643 Z" id="Rectangle-14" stroke="#C7C7C7" stroke-width="2" sketch:type="MSShapeGroup"></path>
+            <path d="M848.008871,689 C842.481124,689 840.304236,692.840394 843.14013,697.566884 L868,739 L892.85987,697.566884 C895.698685,692.835524 893.514786,689 887.991129,689 L848.008871,689 Z" id="Rectangle-15" stroke="#C7C7C7" stroke-width="2" sketch:type="MSShapeGroup" transform="translate(868.000000, 714.000000) rotate(-180.000000) translate(-868.000000, -714.000000) "></path>
+            <path d="M848.000444,647 C846.343345,647 845.69461,648.147617 846.553794,649.567137 L868,685 L889.446206,649.567137 C890.304343,648.149347 889.648219,647 887.999556,647 L848.000444,647 Z" id="Rectangle-16" fill="#FFB400" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

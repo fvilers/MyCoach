@@ -58,9 +58,29 @@
     </li>
 </script>
 
+<script type="text/template" id="paymentTemplate">
+    <section class="payAndGo">
+        <a id="close" href=""><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?"></a>
+        <h1>You are about to book <%= firstName %> for a coaching, please can you just confirm:</h1>
+        <div class="infoOrder">
+            <div class="cardInfo">
+                Eurocard/Mastercard ***-1881<br />
+                <%= firstName %> <%= lastName %><br />
+                01/2017<br />
+                <a href="">Change?</a>
+            </div>
+            <div class="rateOrder">
+                <strong><%= price %></strong><sup>$</sup><br />
+                <span>per hour</span>
+            </div>
+            <button>It's ok, <span>I want to start now</span></button>
+        </div>        
+    </section>
+</script>
+
 <script type="text/template" id="pophoverTemplate">
     <div id="pophover">
-        <section>
+            <section data-id="<%= id %>">
             <a id="close" href="#"><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?" /></a>
             <figure class="coachSnap">
                 <img src="<%= photoUrl %>" alt="Coach <%= firstName %>">
@@ -82,16 +102,16 @@
                 <ol>
                     <% for(var i = 0; i < schedules.length; i++) { %>
                     <li>
-                        <a href="">
+                        <a href="" class="booking-coach">
                             <% if ((moment().isAfter(moment(schedules[i].startDateTime))) && (moment().isBefore(moment(schedules[i].startDateTime).add('hours', schedules[i].duration)))) { %>
-                                <strong><%= moment(schedules[i].startDateTime).format('dddd, DD/MM') %></strong><br />
-                                <span class="available"><span></span> Available now</span>
+                            <strong><%= moment(schedules[i].startDateTime).format('dddd, DD/MM') %></strong><br />
+                            <span class="available"><span></span> Available now</span>
                             <% } else if (moment().isSame(schedules[i].startDateTime, 'day')) { %>
-                                <strong><%= moment().format('dddd, DD/MM') %></strong><br />
-                                <%= moment(schedules[i].startDateTime).fromNow() %>
+                            <strong><%= moment().format('dddd, DD/MM') %></strong><br />
+                            <%= moment(schedules[i].startDateTime).fromNow() %>
                             <% } else { %>
-                                <strong><%= moment(schedules[i].startDateTime).format('dddd, DD/MM') %></strong><br/>
-                                <%= moment(schedules[i].startDateTime).format('HHa') %> to <%= moment().add('hours', schedules[i].duration).format('HHa') %>
+                            <strong><%= moment(schedules[i].startDateTime).format('dddd, DD/MM') %></strong><br />
+                            <%= moment(schedules[i].startDateTime).format('HHa') %> to <%= moment().add('hours', schedules[i].duration).format('HHa') %>
                             <% } %>
                         </a>
                     </li>

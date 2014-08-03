@@ -1,4 +1,5 @@
-﻿using MyCoach.Business.Domain.Model;
+﻿using Antlr.Runtime.Tree;
+using MyCoach.Business.Domain.Model;
 using MyCoach.Data.EntityFramework;
 using MyCoach.Web.MainSite.Mappers;
 using System;
@@ -52,11 +53,20 @@ namespace MyCoach.Web.MainSite.Controllers.Api
 
             query = query.OrderBy(x => x.Id); // TODO: sort on schedules
 
+            var totalCount = await query.CountAsync();
             var coaches = await query.Skip((page - 1) * pageSize).Take(pageSize).ToArrayAsync();
+
             var mapper = new CoachDtoMapper();
             var dtos = coaches.Select(coach => mapper.Map(coach, id => Url.Link("GetPicture", new { id }))).ToArray();
+            var allFetched = ((page - 1) * pageSize + coaches.Count()) == totalCount;
 
-            return Ok(dtos);
+            return Ok(new
+            {
+                coaches = dtos,
+                coachesCount = totalCount,
+                allFetched = allFetched
+
+            });
         }
 
         [Route("{id:int}")]

@@ -278,7 +278,7 @@ html {
 // POP HOVER
 
 #pophover {
-  display: none;
+  // display: none;
   #close {
     position: absolute;
     opacity: .5;
@@ -321,7 +321,7 @@ html {
     // CONFIRMATION POP HOVER
 
     &.payAndGo {
-      height: 380px;
+      height: 390px;
       h1 {
         font-size: 1.5em;
         color: $green;
@@ -331,8 +331,8 @@ html {
         overflow: hidden;
         padding: 20px;
         margin-top: 30px;
-        border: 1px dotted transparentize($green, .3);
         @include border-radius(4px);
+        background: $blue url(../images/home/wave-bg.svg) no-repeat left -20px;
       }
       .cardInfo {
         float: left;
@@ -357,7 +357,7 @@ html {
         top: 12px;
         right: 0;
         width: 30%;
-        color: $green;
+        color: $white;
         strong {
           font-size: 3em;
         }
@@ -378,18 +378,19 @@ html {
         }
         @include border-radius(4px);
         padding: 15px 20px 15px 56px;
-        color: $white;
-        background: $blue url(../images/home/skype-icon.svg) no-repeat 10px center;
+        color: $blue;
+        background: $white url(../images/home/skype-icon-off.svg) no-repeat 10px center;
         span {
-          color: $yellow;
-          border: 1px solid $yellow;
+          color: darken($blue, 20%);
+          border: 1px solid darken($blue, 20%);
           border-width: 0 0 1px 0;
           padding-bottom: 1px;
         }
         &:hover {
-          background-color: darken($blue, 20%);
+          background: darken($blue, 20%) url(../images/home/skype-icon.svg) no-repeat 10px center;
           span {
             border: none;
+            color: $white;
           }
         }
       }
@@ -413,6 +414,11 @@ html {
       color: $darkgreen !important;
       line-height: 2em!important;
       background-color: $white!important;
+    }
+    &.loading {
+      div {
+        padding: 115px 0;
+      }
     }
   }
 
@@ -461,7 +467,21 @@ html {
       }
     }
   }
+}
 
+#loadingSection {
+  text-align: center;
+  button {
+    border: 1px solid $white;
+    @include border-radius(20px);
+    padding: 6px 15px;
+    color: $white;
+    background-color: $green;
+    &:hover {
+      color: $green;
+      background-color: $white;
+    }
+  }
 }
 
 
