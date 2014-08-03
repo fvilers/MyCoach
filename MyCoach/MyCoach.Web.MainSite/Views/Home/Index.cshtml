@@ -74,13 +74,13 @@
                 <span>per hour</span>
             </div>
             <button>It's ok, <span>I want to start now</span></button>
-        </div>        
+        </div>
     </section>
 </script>
 
 <script type="text/template" id="pophoverTemplate">
     <div id="pophover">
-            <section data-id="<%= id %>">
+        <section data-id="<%= id %>">
             <a id="close" href="#"><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?" /></a>
             <figure class="coachSnap">
                 <img src="<%= photoUrl %>" alt="Coach <%= firstName %>">
@@ -169,10 +169,12 @@
                 }).keyup(function (e) {
                     if (e.keyCode == 8 && $(this).val() == '') {
                         $('#search-keywords li:last').remove();
-                        getCoaches();
 
                         if ($('#search-keywords li').length == 0) {
+                            $('#search-results ol li').remove();
                             $(this).blur().focus();
+                        } else {
+                            getCoaches();
                         };
                     }
                 });
