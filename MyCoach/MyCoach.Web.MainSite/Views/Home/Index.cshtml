@@ -108,7 +108,7 @@
                             <%= moment(schedules[i].startDateTime).fromNow() %>
                             <% } else { %>
                             <strong><%= moment(schedules[i].startDateTime).format('dddd, DD/MM') %></strong><br />
-                            <%= moment(schedules[i].startDateTime).format('HHa') %> to <%= moment().add('hours', schedules[i].duration).format('HHa') %>
+                            <%= moment(schedules[i].startDateTime).format('HHa') %> to <%= moment(schedules[i].startDateTime).add('hours', schedules[i].duration).format('HHa') %>
                             <% } %>
                         </a>
                     </li>
