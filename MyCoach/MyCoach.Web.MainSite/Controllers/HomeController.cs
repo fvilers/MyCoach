@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MyCoach.Web.MainSite.Controllers
 {
@@ -12,12 +11,10 @@ namespace MyCoach.Web.MainSite.Controllers
             return View();
         }
 
-        [Route("search")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Search(string[] keywords)
+        [Route("about")]
+        public ActionResult About()
         {
-            throw new NotImplementedException();
+            return View();
         }
     }
 }

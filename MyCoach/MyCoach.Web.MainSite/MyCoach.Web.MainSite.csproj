@@ -196,8 +196,11 @@
     <Content Include="assets\images\home\skype-icon-off.svg" />
     <Content Include="assets\images\home\skype-icon.svg" />
     <Content Include="assets\images\home\wave-bg.svg" />
+    <Content Include="assets\images\users\david-werbrouck.jpeg" />
     <Content Include="assets\images\users\fabian-vilers.png" />
     <Content Include="assets\images\users\julia-vumilia.jpg" />
+    <Content Include="assets\images\users\roland-civet.jpg" />
+    <Content Include="assets\images\users\sylvain-guerin.png" />
     <Content Include="assets\stylesheets\screen.css" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
@@ -265,6 +268,7 @@
     <Content Include="assets\stylesheets\normalize.scss" />
     <Content Include="assets\stylesheets\screen.scss" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Views\Home\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
