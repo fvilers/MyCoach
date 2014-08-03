@@ -60,7 +60,7 @@
 
 <script type="text/template" id="paymentTemplate">
     <section class="payAndGo">
-        <a id="close" href=""><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?"></a>
+        <a id="close" href="javascript:void(0);"><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?"></a>
         <h1>You are about to book <%= firstName %> for a coaching, please can you just confirm:</h1>
         <div class="infoOrder">
             <div class="cardInfo">
@@ -81,7 +81,7 @@
 <script type="text/template" id="pophoverTemplate">
     <div id="pophover">
             <section data-id="<%= id %>">
-            <a id="close" href="#"><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?" /></a>
+            <a id="close" href="javascript:void(0);"><img src="@Url.Content("~/assets/images/home/close-icon.svg")" alt="Close?" /></a>
             <figure class="coachSnap">
                 <img src="<%= photoUrl %>" alt="Coach <%= firstName %>">
                 <figcaption>
