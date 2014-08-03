@@ -332,7 +332,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "JaniceRNewell@jourrapide.com",
                 FirstName = "Janice",
                 LastName = "Newell",
-                Summary = "",
+                Summary = "As a seasoned developer, I love to teach newbies about JavaScript best practices.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 27,
                 Currency = Currency.Dollar,
@@ -353,7 +353,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "sylvainguerin",
                 Photo = sylvainPicture,
             };
-            sylvain.ExpertiseDomains.AddRange(dev, csharp);
+            sylvain.ExpertiseDomains.AddRange(dev, csharp, new ExpertiseDomain { Name = "Visual Basic 4", Slug = "vb4" });
 
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, terrence);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, louise);
@@ -373,14 +373,16 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.SaveChanges();
 
             var scheduleStart = DateTime.Today.AddDays(1).AddHours(8);
-            var schedule1 = new Schedule { StartDateTime = scheduleStart.AddHours(1), Duration = 1 };
-            var schedule2 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 1 };
+            var schedule1 = new Schedule { StartDateTime = DateTime.Today.AddHours(16), Duration = 4 };
+            var schedule2 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 2 };
+            var schedule3 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 2 };
 
             context.Schedules.Add(schedule1);
             context.Schedules.Add(schedule2);
+            context.Schedules.Add(schedule3);
             context.SaveChanges();
 
-            sylvain.Schedules.AddRange(schedule1, schedule2);
+            sylvain.Schedules.AddRange(schedule1, schedule2, schedule3);
         }
     }
 }
