@@ -1,6 +1,14 @@
 // font-size:
 
 @font-face {
+  font-family: 'bello';
+  src: url('../fonts/bello.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/bello.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bello.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bello.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
   font-family: 'roboto-bold';
   src: url('../fonts/roboto-bold.eot'); /* IE9 Compat Modes */
   src: url('../fonts/roboto-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
