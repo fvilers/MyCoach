@@ -37,6 +37,11 @@
             <img src="<%= photoUrl %>" alt="Coach <%= firstName %>">
             <figcaption>
                 <strong>Coach <%= firstName %></strong>&middot;<span class="rate"><%= price %>$ per hour</span>
+                <% for(var i = 0; i < schedules.length; i++) { 
+                    if ((moment().isAfter(moment(schedules[i].startDateTime))) && (moment().isBefore(moment(schedules[i].startDateTime).add('hours', schedules[i].duration)))) { %>
+                    &middot;<span class="available"><span></span> Available now</span>
+                    <% } 
+                } %>
                 <p class="bio">
                     <%= summary %>
                 </p>
