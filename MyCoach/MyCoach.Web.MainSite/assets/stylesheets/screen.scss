@@ -369,7 +369,9 @@ html {
           font-size: .8em!important;
         }
       }
-      button {
+      #callCoach {
+        text-decoration: none;
+        display: inline-block;
         margin-top: 15px;
         border: 0;
         font: {
