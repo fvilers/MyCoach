@@ -353,7 +353,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "sylvainguerin",
                 Photo = sylvainPicture,
             };
-            sylvain.ExpertiseDomains.AddRange(dev, csharp);
+            sylvain.ExpertiseDomains.AddRange(dev, csharp, new ExpertiseDomain { Name = "Visual Basic 4", Slug = "vb4" });
 
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, terrence);
             context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, louise);
