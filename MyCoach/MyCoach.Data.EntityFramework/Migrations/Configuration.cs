@@ -41,13 +41,13 @@ namespace MyCoach.Data.EntityFramework.Migrations
             var internet = new ExpertiseDomain { Name = "Internet", Slug = "internet" };
             var health = new ExpertiseDomain { Name = "Health", Slug = "health" };
             var comedy = new ExpertiseDomain { Name = "Comedy", Slug = "comedy" };
-            var cycling = new ExpertiseDomain { Name = "Cycling", Slug = "cycling" };
+            var spinning = new ExpertiseDomain { Name = "Spinning", Slug = "spinnig" };
             var businessProcess = new ExpertiseDomain {Name = "Business process", Slug = "business-process"};
             var financial = new ExpertiseDomain {Name = "Financial", Slug = "financial"};
             var businessModel = new ExpertiseDomain {Name = "Business Model", Slug = "business-model"};
             var javascript = new ExpertiseDomain {Name = "JavaScript", Slug = "javascript"};
 
-            context.Keywords.AddOrUpdate(x => x.Name, dev, agile, scrum, dotNet, csharp, sqlServer, rdbms, web, internet, design, it, branding, gardening, seflDevelopment, financial, music, guitar, piano, drums, sport, running, businessProcess, photography, comedy, health, composition, cycling, businessModel, javascript);
+            context.Keywords.AddOrUpdate(x => x.Name, dev, agile, scrum, dotNet, csharp, sqlServer, rdbms, web, internet, design, it, branding, gardening, seflDevelopment, financial, music, guitar, piano, drums, sport, running, businessProcess, photography, comedy, health, composition, spinning, businessModel, javascript);
             context.SaveChanges();
 
             var terrencePicture = new Image
@@ -134,7 +134,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "TerrenceRBlake@dayrep.com",
                 FirstName = "Terrence",
                 LastName = "Blake",
-                Summary = "",
+                Summary = "I'm a .NET developer and what to help you undestand the basics of programming.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 30,
                 Currency = Currency.Dollar,
@@ -148,7 +148,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "LouiseZBorg@rhyta.com",
                 FirstName = "Louise",
                 LastName = "Borg",
-                Summary = "",
+                Summary = "As a convinced agilist, I'm here to teach you about the Agile methodology and Scrum in particular.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 19,
                 Currency = Currency.Dollar,
@@ -162,7 +162,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "BrianLPatterson@jourrapide.com",
                 FirstName = "Brian",
                 LastName = "Patterson",
-                Summary = "",
+                Summary = "I can give you general tips about photography and music composition.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 52,
                 Currency = Currency.Dollar,
@@ -176,7 +176,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "TrinaCDavid@rhyta.com",
                 FirstName = "Trina",
                 LastName = "David",
-                Summary = "",
+                Summary = "I have 3 passions I'd like to share with you: photography, comedy and taking care of your health.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 44,
                 Currency = Currency.Dollar,
@@ -190,7 +190,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "MichaelDMason@rhyta.com",
                 FirstName = "Michael",
                 LastName = "Mason",
-                Summary = "",
+                Summary = "As an SQL Server certified Microsoft trainer, I'm here to help you to design and dimension your database.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 52,
                 Currency = Currency.Dollar,
@@ -204,7 +204,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "EmiliaDBrady@jourrapide.com",
                 FirstName = "Emilia",
                 LastName = "Brady",
-                Summary = "",
+                Summary = "I'm a music teacher and I'll give you piano and/or guitar lessons.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 54,
                 Currency = Currency.Dollar,
@@ -218,7 +218,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "IsaacEWilliams@teleworm.us",
                 FirstName = "Isaac",
                 LastName = "Williams",
-                Summary = "",
+                Summary = "Would you like to learn about drums? Let's go and rock the casbah!",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 32,
                 Currency = Currency.Dollar,
@@ -232,7 +232,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "DorothyJJackson@teleworm.us",
                 FirstName = "Dorothy",
                 LastName = "Jackson",
-                Summary = "",
+                Summary = "After several experience running marathons, I want to give you the best advices on how to be prepared for running long distances.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 19,
                 Currency = Currency.Dollar,
@@ -246,7 +246,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "VincentMCampos@armyspy.com",
                 FirstName = "Vincent",
                 LastName = "Campos",
-                Summary = "",
+                Summary = "I will give you guidance on how to grow your business on the internet.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 35,
                 Currency = Currency.Dollar,
@@ -260,35 +260,35 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "RenaKMiller@rhyta.com",
                 FirstName = "Rena",
                 LastName = "Miller",
-                Summary = "",
+                Summary = "I'm growing my own vegetables and I can help you make your own.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 46,
                 Currency = Currency.Dollar,
                 SkypeId = "Derstly",
                 Photo = renaPicture
             };
-            rena.ExpertiseDomains.AddRange(gardening, health, seflDevelopment);
+            rena.ExpertiseDomains.AddRange(gardening);
 
             var jeffrey = new Coach
             {
                 UserName = "JeffreyBowser@rhyta.com",
                 FirstName = "Jeffrey",
                 LastName = "Bowser",
-                Summary = "",
+                Summary = "I'm a spinning freak and I can coach you for your sport performances.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 47,
                 Currency = Currency.Dollar,
                 SkypeId = "Knellf67",
                 Photo = jeffreyPicture
             };
-            jeffrey.ExpertiseDomains.AddRange(comedy, sport, cycling);
+            jeffrey.ExpertiseDomains.AddRange(comedy, sport, spinning);
 
             var amanda = new Coach
             {
                 UserName = "AmandaDNelson@jourrapide.com",
                 FirstName = "Amanda",
                 LastName = "Nelson",
-                Summary = "",
+                Summary = "CEO of different company, I'm here to share my experience about business and financial theory.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 50,
                 Currency = Currency.Dollar,
@@ -302,7 +302,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 UserName = "FrederickLEuler@jourrapide.com",
                 FirstName = "Frederick",
                 LastName = "Euler",
-                Summary = "",
+                Summary = "As a sport doctor, ask me anything you want about health and sport performance.",
                 Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lectus fermentum, faucibus nunc eu, ornare urna. Sed cursus fermentum velit, vel rutrum velit ornare in. Phasellus quam mi, sollicitudin at volutpat sit amet, luctus id nunc. Maecenas sit amet est sapien. Ut eget consectetur enim, eget ultrices velit. Donec tempor congue sapien, adipiscing tempor sapien eleifend non. Duis et tincidunt magna, sit amet iaculis orci. Sed lacinia consequat elit eget mattis. Cras blandit adipiscing vestibulum. In lobortis enim imperdiet, condimentum augue eu, tristique orci. Sed iaculis accumsan diam id consectetur. Donec cursus ac ipsum vitae mattis. Nunc in arcu elit. Vestibulum id justo viverra, lobortis justo et, pellentesque nisl. Nullam sit amet dolor magna. Nunc tempor est sed eleifend mattis.",
                 Price = 54,
                 Currency = Currency.Dollar,
