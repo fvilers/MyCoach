@@ -19,37 +19,35 @@ namespace MyCoach.Data.EntityFramework.Migrations
         {
             var dev = new ExpertiseDomain { Name = "Development", Slug = "development" };
             var csharp = new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" };
-            var photography = new ExpertiseDomain {Name = "Photography", Slug = "photography"};
+            var photography = new ExpertiseDomain { Name = "Photography", Slug = "photography" };
             var composition = new ExpertiseDomain { Name = "Composition", Slug = "composition" };
-            
-            context.Keywords.AddOrUpdate(x => x.Name, dev);
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Agile", Slug = "agile" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Scrum", Slug = "scrum" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = ".NET", Slug = "dot-net" });
-            context.Keywords.AddOrUpdate(x => x.Name, csharp);
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "SQL Server", Slug = "sql-server" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "RDBMS", Slug = "rdbms" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Web", Slug = "web" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Internet", Slug = "internet" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Design", Slug = "design" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Hardware", Slug = "hardware" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "IT", Slug = "it" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "jQuery", Slug = "jquery" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Fashion", Slug = "fashion" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Branding", Slug = "branding" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Planning", Slug = "planning" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Gardening", Slug = "gardening" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Self development", Slug = "self-development" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Financial", Slug = "financial" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Music", Slug = "music" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Guitar", Slug = "guitar" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Piano", Slug = "piano" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Drums", Slug = "drums" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Sport", Slug = "sport" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Running", Slug = "running" });
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Business process", Slug = "business-process" });
-            context.Keywords.AddOrUpdate(x => x.Name, photography);
-            context.Keywords.AddOrUpdate(x => x.Name, composition);
+            var agile = new ExpertiseDomain { Name = "Agile", Slug = "agile" };
+            var scrum = new ExpertiseDomain { Name = "Scrum", Slug = "scrum" };
+            var it = new ExpertiseDomain { Name = "IT", Slug = "it" };
+            var dotNet = new ExpertiseDomain { Name = ".NET", Slug = "dot-net" };
+            var sqlServer = new ExpertiseDomain { Name = "SQL Server", Slug = "sql-server" };
+            var rdbms = new ExpertiseDomain { Name = "RDBMS", Slug = "rdbms" };
+            var design = new ExpertiseDomain { Name = "Design", Slug = "design" };
+            var music = new ExpertiseDomain { Name = "Music", Slug = "music" };
+            var guitar = new ExpertiseDomain { Name = "Guitar", Slug = "guitar" };
+            var piano = new ExpertiseDomain { Name = "Piano", Slug = "piano" };
+            var drums = new ExpertiseDomain { Name = "Drums", Slug = "drums" };
+            var gardening = new ExpertiseDomain { Name = "Planning", Slug = "planning" };
+            var sport = new ExpertiseDomain { Name = "Sport", Slug = "sport" };
+            var running = new ExpertiseDomain { Name = "Running", Slug = "running" };
+            var seflDevelopment = new ExpertiseDomain { Name = "Self development", Slug = "self-development" };
+            var web = new ExpertiseDomain { Name = "Web", Slug = "web" };
+            var branding = new ExpertiseDomain { Name = "Branding", Slug = "branding" };
+            var internet = new ExpertiseDomain { Name = "Internet", Slug = "internet" };
+            var health = new ExpertiseDomain { Name = "Health", Slug = "health" };
+            var comedy = new ExpertiseDomain { Name = "Comedy", Slug = "comedy" };
+            var cycling = new ExpertiseDomain { Name = "Cycling", Slug = "cycling" };
+            var businessProcess = new ExpertiseDomain {Name = "Business process", Slug = "business-process"};
+            var financial = new ExpertiseDomain {Name = "Financial", Slug = "financial"};
+            var businessModel = new ExpertiseDomain {Name = "Business Model", Slug = "business-model"};
+            var javascript = new ExpertiseDomain {Name = "JavaScript", Slug = "javascript"};
+
+            context.Keywords.AddOrUpdate(x => x.Name, dev, agile, scrum, dotNet, csharp, sqlServer, rdbms, web, internet, design, it, branding, gardening, seflDevelopment, financial, music, guitar, piano, drums, sport, running, businessProcess, photography, comedy, health, composition, cycling, businessModel, javascript);
             context.SaveChanges();
 
             var terrencePicture = new Image
@@ -128,21 +126,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 ContentType = "image/jpeg"
             };
 
-            context.Images.Add(terrencePicture);
-            context.Images.Add(louisePicture);
-            context.Images.Add(brianPicture);
-            context.Images.Add(trinaPicture);
-            context.Images.Add(michaelPicture);
-            context.Images.Add(emiliaPicture);
-            context.Images.Add(isaacPicture);
-            context.Images.Add(dorothyPicture);
-            context.Images.Add(vincentPicture);
-            context.Images.Add(renaPicture);
-            context.Images.Add(jeffreyPicture);
-            context.Images.Add(amandaPicture);
-            context.Images.Add(frederickPicture);
-            context.Images.Add(janicePicture);
-            context.Images.Add(sylvainPicture);
+            context.Images.AddOrUpdate(terrencePicture, louisePicture, brianPicture, trinaPicture, michaelPicture, emiliaPicture, isaacPicture, dorothyPicture, vincentPicture, renaPicture, jeffreyPicture, amandaPicture, frederickPicture, janicePicture, sylvainPicture);
             context.SaveChanges();
 
             var terrence = new Coach
@@ -157,7 +141,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Thoures",
                 Photo = terrencePicture
             };
-            terrence.ExpertiseDomains.AddRange();
+            terrence.ExpertiseDomains.AddRange(dotNet, csharp, dev);
 
             var louise = new Coach
             {
@@ -171,7 +155,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Livize",
                 Photo = louisePicture
             };
-            louise.ExpertiseDomains.AddRange();
+            louise.ExpertiseDomains.AddRange(agile, scrum, it);
 
             var brian = new Coach
             {
@@ -185,7 +169,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Cholove",
                 Photo = brianPicture
             };
-            brian.ExpertiseDomains.AddRange(photography, composition);
+            brian.ExpertiseDomains.AddRange(photography, composition, guitar);
 
             var trina = new Coach
             {
@@ -199,7 +183,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Threp1959",
                 Photo = trinaPicture
             };
-            trina.ExpertiseDomains.AddRange(photography);
+            trina.ExpertiseDomains.AddRange(photography, comedy, health);
 
             var michael = new Coach
             {
@@ -213,7 +197,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Foreasked",
                 Photo = michaelPicture
             };
-            michael.ExpertiseDomains.AddRange();
+            michael.ExpertiseDomains.AddRange(sqlServer, rdbms, design);
 
             var emilia = new Coach
             {
@@ -227,7 +211,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Headen",
                 Photo = emiliaPicture
             };
-            emilia.ExpertiseDomains.AddRange();
+            emilia.ExpertiseDomains.AddRange(music, piano, guitar);
 
             var isaac = new Coach
             {
@@ -241,7 +225,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Eaciall",
                 Photo = isaacPicture
             };
-            isaac.ExpertiseDomains.AddRange();
+            isaac.ExpertiseDomains.AddRange(music, drums, gardening);
 
             var dorothy = new Coach
             {
@@ -255,7 +239,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Thout1994",
                 Photo = dorothyPicture
             };
-            dorothy.ExpertiseDomains.AddRange();
+            dorothy.ExpertiseDomains.AddRange(sport, running, seflDevelopment);
 
             var vincent = new Coach
             {
@@ -269,7 +253,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Throom",
                 Photo = vincentPicture
             };
-            vincent.ExpertiseDomains.AddRange();
+            vincent.ExpertiseDomains.AddRange(web, branding, internet);
 
             var rena = new Coach
             {
@@ -283,7 +267,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Derstly",
                 Photo = renaPicture
             };
-            rena.ExpertiseDomains.AddRange();
+            rena.ExpertiseDomains.AddRange(gardening, health, seflDevelopment);
 
             var jeffrey = new Coach
             {
@@ -297,7 +281,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Knellf67",
                 Photo = jeffreyPicture
             };
-            jeffrey.ExpertiseDomains.AddRange(new ExpertiseDomain { Name = "Comedy", Slug = "comedy" });
+            jeffrey.ExpertiseDomains.AddRange(comedy, sport, cycling);
 
             var amanda = new Coach
             {
@@ -311,7 +295,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Afroping1963",
                 Photo = amandaPicture
             };
-            amanda.ExpertiseDomains.AddRange();
+            amanda.ExpertiseDomains.AddRange(businessProcess, financial, businessModel);
 
             var frederick = new Coach
             {
@@ -325,7 +309,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Somplet59",
                 Photo = frederickPicture
             };
-            frederick.ExpertiseDomains.AddRange();
+            frederick.ExpertiseDomains.AddRange(running, sport, health);
 
             var janice = new Coach
             {
@@ -339,7 +323,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Youreand87",
                 Photo = janicePicture
             };
-            janice.ExpertiseDomains.AddRange(dev, new ExpertiseDomain { Name = "JavaScript", Slug = "javascript" });
+            janice.ExpertiseDomains.AddRange(dev, javascript, design);
 
             var sylvain = new Coach
             {
@@ -355,21 +339,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
             };
             sylvain.ExpertiseDomains.AddRange(dev, csharp, new ExpertiseDomain { Name = "Visual Basic 4", Slug = "vb4" });
 
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, terrence);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, louise);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, brian);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, trina);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, michael);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, emilia);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, isaac);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, dorothy);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, vincent);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, rena);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, jeffrey);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, amanda);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, frederick);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, janice);
-            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, sylvain);
+            context.ApplicationUsers.AddOrUpdate(x => new { x.UserName }, terrence, louise, brian, trina, michael, emilia, isaac, dorothy, vincent, rena, jeffrey, amanda, frederick, janice, sylvain);
             context.SaveChanges();
 
             var scheduleStart = DateTime.Today.AddDays(1).AddHours(8);
@@ -377,9 +347,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
             var schedule2 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 2 };
             var schedule3 = new Schedule { StartDateTime = scheduleStart.AddHours(2), Duration = 2 };
 
-            context.Schedules.Add(schedule1);
-            context.Schedules.Add(schedule2);
-            context.Schedules.Add(schedule3);
+            context.Schedules.AddOrUpdate(schedule1, schedule2, schedule3);
             context.SaveChanges();
 
             sylvain.Schedules.AddRange(schedule1, schedule2, schedule3);
