@@ -19,9 +19,10 @@ namespace MyCoach.Data.EntityFramework.Migrations
         {
             var dev = new ExpertiseDomain { Name = "Development", Slug = "development" };
             var csharp = new ExpertiseDomain { Name = "CSharp", Slug = "c-sharp" };
+            var photography = new ExpertiseDomain {Name = "Photography", Slug = "photography"};
+            var composition = new ExpertiseDomain { Name = "Composition", Slug = "composition" };
             
             context.Keywords.AddOrUpdate(x => x.Name, dev);
-            context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "JavaScript", Slug = "javascript" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Agile", Slug = "agile" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Scrum", Slug = "scrum" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = ".NET", Slug = "dot-net" });
@@ -47,6 +48,8 @@ namespace MyCoach.Data.EntityFramework.Migrations
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Sport", Slug = "sport" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Running", Slug = "running" });
             context.Keywords.AddOrUpdate(x => x.Name, new ExpertiseDomain { Name = "Business process", Slug = "business-process" });
+            context.Keywords.AddOrUpdate(x => x.Name, photography);
+            context.Keywords.AddOrUpdate(x => x.Name, composition);
             context.SaveChanges();
 
             var terrencePicture = new Image
@@ -182,7 +185,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Cholove",
                 Photo = brianPicture
             };
-            brian.ExpertiseDomains.AddRange();
+            brian.ExpertiseDomains.AddRange(photography, composition);
 
             var trina = new Coach
             {
@@ -196,7 +199,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Threp1959",
                 Photo = trinaPicture
             };
-            trina.ExpertiseDomains.AddRange();
+            trina.ExpertiseDomains.AddRange(photography);
 
             var michael = new Coach
             {
@@ -294,7 +297,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Knellf67",
                 Photo = jeffreyPicture
             };
-            jeffrey.ExpertiseDomains.AddRange();
+            jeffrey.ExpertiseDomains.AddRange(new ExpertiseDomain { Name = "Comedy", Slug = "comedy" });
 
             var amanda = new Coach
             {
@@ -336,7 +339,7 @@ namespace MyCoach.Data.EntityFramework.Migrations
                 SkypeId = "Youreand87",
                 Photo = janicePicture
             };
-            janice.ExpertiseDomains.AddRange();
+            janice.ExpertiseDomains.AddRange(dev, new ExpertiseDomain { Name = "JavaScript", Slug = "javascript" });
 
             var sylvain = new Coach
             {

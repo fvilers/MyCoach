@@ -12,6 +12,7 @@ $grey: #D8D8D8;
 $yellow: #FBE4AE;
 $orange: #FFB400;
 $greenblack: #063F00;
+$blue: #199CEE;
 
 @mixin border-radius($value) {
   border-radius: $value;
@@ -29,6 +30,17 @@ html {
   display: none;
 }
 
+.tt-hint {
+  color: $grey;
+  top: -2px !important;
+  left: -2px !important;
+}
+.twitter-typeahead {
+  display: inline !important;
+  float: left;
+  font-family: 'roboto-regular' sans-serif;
+}
+
 // HOME
 
 #home {
@@ -38,6 +50,13 @@ html {
     padding: 30px;
     text-align: right;
     font-size: .8em;
+    .coach {
+      display: inline-block;
+      img {
+        width: 30px;
+        @include border-radius(15px);
+      }
+    }
     a {
       text-decoration: none;
       color: inherit;
@@ -48,6 +67,7 @@ html {
        color: $darkgreen;
       }
       &.coach {
+        margin-left: 20px;
         border: 1px solid $lightgreen;
         padding: 10px 20px;
         @include border-radius(20px);
@@ -68,11 +88,17 @@ html {
     h1 {
       font-weight: normal;
       margin-bottom: 30px;
-      span {
-        font-family: 'roboto-bold' sans-serif;
+      #logo {
+        &:first-child {
+          font: {
+            family: 'bello' sans-serif;
+            size: 1.4em;
+            font-weight: lighter;
+          }
+        }
         color: $white;
         span {
-          color: $darkgreen;
+          color: #0A4805;
         }
       }
     }
@@ -82,7 +108,7 @@ html {
         overflow: hidden;
         width: 60%;
         border: 0;
-        padding: 15px;
+        padding: 17px 15px;
         @include border-radius(4px);
         font-size: 1.5em;
         color: $darkgreen;
@@ -90,11 +116,15 @@ html {
         -moz-box-shadow: 0px 1px 3px 0px rgba(33,130,24,0.80);
         -webkit-box-shadow: 0px 1px 3px 0px rgba(33,130,24,0.80);
         box-shadow: 0px 1px 3px 0px rgba(33,130,24,0.80);
+        &+p {
+          width: 100%;
+          text-align: left;
+        }
       }
       #search-input {
         width: 100%;
         font-family: 'roboto-regular' sans-serif;
-        font-weight: 300;
+        text-align: left;
         border: 0;
         outline: none;
         display: inline-block;
@@ -103,13 +133,15 @@ html {
       #search-keywords {
         float: left;
         text-align: left;
-        &+p {
-          float: left;
-        }
         li {
-          border: dashed 1px red;
+          list-style: none;
           display: inline-block;
-          margin-right: 5px;list-style: none;
+          margin-right: 5px;
+          padding: 2px 5px;
+          @include border-radius(3px);
+          font-family: 'roboto-regular' sans-serif;
+          color: $white;
+          background-color: $blue;
         }
       }
     }
@@ -284,6 +316,9 @@ html {
     -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 2px 26px 0px, rgba(0, 0, 0, 0.0980392) 0px 0px 0px 1px;
     -moz-box-shadow: rgba(0, 0, 0, 0.298039) 0px 2px 26px 0px, rgba(0, 0, 0, 0.0980392) 0px 0px 0px 1px;
     -o-box-shadow: rgba(0, 0, 0, 0.298039) 0px 2px 26px 0px, rgba(0, 0, 0, 0.0980392) 0px 0px 0px 1px;
+
+    // CONFIRMATION POP HOVER
+
     &.payAndGo {
       height: 380px;
       h1 {
@@ -295,12 +330,12 @@ html {
         overflow: hidden;
         padding: 20px;
         margin-top: 30px;
+        border: 1px dotted transparentize($green, .3);
         @include border-radius(4px);
-        background-color: $green;
       }
       .cardInfo {
         float: left;
-        color: transparentize($darkgreen, .5);
+        color: transparentize($darkgreen, .4);
         font-family: 'courrier' sans-serif;
         text-align: left;
         font-size: 1.1em;
@@ -318,21 +353,43 @@ html {
       }
       .rateOrder {
         position: absolute;
+        top: 12px;
         right: 0;
-        top: 15px;
         width: 30%;
+        color: $green;
         strong {
           font-size: 3em;
-          color: $yellow;
         }
         sup {
           font-size: 1.2em;
           top: -1em;
-          }
-        color: $white;
-        background-color: $green;
+        }
         span {
           font-size: .8em!important;
+        }
+      }
+      button {
+        margin-top: 15px;
+        border: 0;
+        font: {
+          family: 'roboto-regular' sans-serif;
+          size: 1.1em;
+        }
+        @include border-radius(4px);
+        padding: 15px 20px 15px 56px;
+        color: $white;
+        background: $blue url(../images/home/skype-icon.svg) no-repeat 10px center;
+        span {
+          color: $yellow;
+          border: 1px solid $yellow;
+          border-width: 0 0 1px 0;
+          padding-bottom: 1px;
+        }
+        &:hover {
+          background-color: darken($blue, 20%);
+          span {
+            border: none;
+          }
         }
       }
     }

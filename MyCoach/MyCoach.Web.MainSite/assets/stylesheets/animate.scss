@@ -221,63 +221,62 @@
   }
 }
 
-// // POPHOVER
+// POPHOVER
 
-// #pophover{
-//   -moz-animation-delay: 500ms;
-//   -moz-animation-duration: 1000ms;
-//   -moz-animation-name: showAvailable;
-//   -moz-animation-fill-mode: forwards;
-//   -moz-animation-iteration-count: infinite;
-//   -webkit-animation-delay: 500ms;
-//   -webkit-animation-duration: 1000ms;
-//   -webkit-animation-name: showAvailable;
-//   -webkit-animation-fill-mode: forwards;
-//   -webkit-animation-iteration-count: infinite;
-//   -o-animation-delay: 500ms;
-//   -o-animation-duration: 1000ms;
-//   -o-animation-name: showAvailable;
-//   -o-animation-fill-mode: forwards;
-//   -o-animation-iteration-count: infinite;
-//   -ms-animation-delay: 500ms;
-//   -ms-animation-duration: 1000ms;
-//   -ms-animation-name: showAvailable;
-//   -ms-animation-fill-mode: forwards;
-//   -ms-animation-iteration-count: infinite;
-// }
+#pophover section{
+  -moz-animation-delay: 500ms;
+  -moz-animation-duration: 1000ms;
+  -moz-animation-name: showPop;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-delay: 500ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-name: showPop;
+  -webkit-animation-fill-mode: forwards;
+  -o-animation-delay: 500ms;
+  -o-animation-duration: 1000ms;
+  -o-animation-name: showPop;
+  -o-animation-fill-mode: forwards;
+  -ms-animation-delay: 500ms;
+  -ms-animation-duration: 1000ms;
+  -ms-animation-name: showPop;
+  -ms-animation-fill-mode: forwards;
+  -ms-animation-iteration-count: infinite;
+}
 
-// @-moz-keyframes showAvailable {
-// 0%,100%{
-//     background-color: #FFB400;
-//   }
-//   50% {
-//     background-color: #fff;
-//   }
-// }
-// @-webkit-keyframes showAvailable {
-// 0%,100%{
-//     background-color: #FFB400;
-//   }
-//   50% {
-//     background-color: #fff;
-//   }
-// }
-// @-o-keyframes showAvailable {
-// 0%,100%{
-//     background-color: #FFB400;
-//   }
-//   50% {
-//     background-color: #fff;
-//   }
-// }
-// @-ms-keyframes showAvailable {
-//   0%,100%{
-//     background-color: #FFB400;
-//   }
-//   50% {
-//     background-color: #fff;
-//   }
-// }
+@-moz-keyframes showPop {
+0%,100%{
+    background-color: #FFB400;
+  }
+  50% {
+    background-color: #fff;
+  }
+}
+@-webkit-keyframes showPop {
+0%{
+    width: 0;
+    height: 0;
+  }
+100% {
+    width: 300px;
+    height: 250px;
+  }
+}
+@-o-keyframes showPop {
+0%,100%{
+    background-color: #FFB400;
+  }
+  50% {
+    background-color: #fff;
+  }
+}
+@-ms-keyframes showPop {
+  0%,100%{
+    background-color: #FFB400;
+  }
+  50% {
+    background-color: #fff;
+  }
+}
 
 
 
