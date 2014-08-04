@@ -11,7 +11,7 @@
         var ids = $li.map(function (index, li) {
             return $(li).data('id');
         });
-        var base = 'http://localhost:29071/api/coaches?';
+        var base = 'http://my-coach.azurewebsites.net/api/coaches?';
         var qs = ids.map(function (index, id) {
             return 'keyword=' + id;
         }).toArray().concat('page=' + page, 'pageSize=' + pageSize);
@@ -105,7 +105,7 @@ window.substringMatcher = function (strs) {
 };
 
 $(function () {
-    $.getJSON('http://localhost:29071/api/expertise-domains').done(function (data) {
+    $.getJSON('http://my-coach.azurewebsites.net/api/expertise-domains').done(function (data) {
         $('#search-input').typeahead({
             hint: true,
             hightlight: false,
@@ -144,7 +144,7 @@ $(function () {
     $(document).on('click', '.coachSnap', function () {
         var id = $(this).data('id');
 
-        $.getJSON('http://localhost:29071/api/coaches/' + id).done(function (data) {
+        $.getJSON('http://my-coach.azurewebsites.net/api/coaches/' + id).done(function (data) {
             var markup = $('#pophoverTemplate').text();
             var tmpl = _.template(markup);
             var html = tmpl(data);
